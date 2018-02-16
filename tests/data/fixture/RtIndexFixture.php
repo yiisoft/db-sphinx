@@ -1,13 +1,13 @@
 <?php
 
-namespace yiiunit\extensions\sphinx\data\fixture;
+namespace yiiunit\sphinx\data\fixture;
 
 use yii\sphinx\ActiveFixture;
-use yiiunit\extensions\sphinx\data\ar\RtIndex;
+use yiiunit\sphinx\data\ar\RtIndex;
 
 class RtIndexFixture extends ActiveFixture
 {
-    public $modelClass = 'yiiunit\extensions\sphinx\data\ar\RtIndex';
+    public $modelClass = 'yiiunit\sphinx\data\ar\RtIndex';
 
     /**
      * {@inheritdoc}

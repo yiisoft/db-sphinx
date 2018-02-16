@@ -526,7 +526,7 @@ class Query extends \yii\db\Query
         $connection = $this->getConnection();
         $match = $this->match;
         if ($match === null) {
-            throw new InvalidCallException('Unable to call snippets: "' . $this->className() . '::match" should be specified.');
+            throw new InvalidCallException('Unable to call snippets: "' . get_class($this) . '::match" should be specified.');
         }
 
         return $connection->createCommand()

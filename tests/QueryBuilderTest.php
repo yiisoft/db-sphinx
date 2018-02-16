@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\db\Expression;
 use yii\sphinx\Query;
@@ -113,7 +113,7 @@ class QueryBuilderTest extends TestCase
     public function testBuildCondition($condition, $expected, $expectedParams)
     {
         $query = (new Query())->where($condition);
-        list($sql, $params) = $this->createQueryBuilder()->build($query);
+        [$sql, $params] = $this->createQueryBuilder()->build($query);
         $this->assertEquals('SELECT *' . (empty($expected) ? '' : ' WHERE ' . $expected), $sql);
         $this->assertEquals($expectedParams, $params);
     }

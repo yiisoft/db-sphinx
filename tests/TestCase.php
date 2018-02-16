@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\helpers\ArrayHelper;
 use yii\sphinx\Connection;

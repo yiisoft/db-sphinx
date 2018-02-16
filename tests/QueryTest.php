@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use Yii;
 use yii\db\Expression;

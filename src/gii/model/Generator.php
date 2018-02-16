@@ -26,7 +26,7 @@ class Generator extends \yii\gii\Generator
     public $ns = 'app\models';
     public $indexName;
     public $modelClass;
-    public $baseClass = 'yii\sphinx\ActiveRecord';
+    public $baseClass = \yii\sphinx\ActiveRecord::class;
     public $useIndexPrefix = false;
 
 
@@ -63,7 +63,7 @@ class Generator extends \yii\gii\Generator
             [['ns'], 'validateNamespace'],
             [['indexName'], 'validateIndexName'],
             [['modelClass'], 'validateModelClass', 'skipOnEmpty' => false],
-            [['baseClass'], 'validateClass', 'params' => ['extends' => ActiveRecord::className()]],
+            [['baseClass'], 'validateClass', 'params' => ['extends' => ActiveRecord::class]],
             [['enableI18N'], 'boolean'],
             [['useIndexPrefix'], 'boolean'],
             [['messageCategory'], 'validateMessageCategory', 'skipOnEmpty' => false],

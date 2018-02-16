@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.13",
+        "yiisoft/yii2": "2.1.x-dev",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*"
     },
@@ -30,6 +30,9 @@
     ],
     "autoload": {
         "psr-4": { "yii\\sphinx\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": {"yiiunit\\sphinx\\": "tests/"}
     },
     "extra": {
         "branch-alias": {

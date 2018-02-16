@@ -1,12 +1,12 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\db\BatchQueryResult;
 use yii\sphinx\Query;
-use yiiunit\extensions\sphinx\data\ar\ActiveRecord;
-use yiiunit\extensions\sphinx\data\ar\ActiveRecordDb;
-use yiiunit\extensions\sphinx\data\ar\ArticleIndex;
+use yiiunit\sphinx\data\ar\ActiveRecord;
+use yiiunit\sphinx\data\ar\ActiveRecordDb;
+use yiiunit\sphinx\data\ar\ArticleIndex;
 
 class BatchQueryResultTest extends TestCase
 {
@@ -26,7 +26,7 @@ class BatchQueryResultTest extends TestCase
             ->from('yii2_test_article_index')
             ->orderBy('id');
         $result = $query->batch(2, $db);
-        $this->assertInstanceOf(BatchQueryResult::className(), $result);
+        $this->assertInstanceOf(BatchQueryResult::class, $result);
         $this->assertEquals(2, $result->batchSize);
         $this->assertSame($result->query, $query);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\db\DataReader;
 
@@ -229,7 +229,7 @@ class CommandTest extends TestCase
         ]);
         $this->assertEquals(1, $command->execute(), 'Unable to update via replace!');
 
-        list($row) = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
+        [$row] = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
         $this->assertEquals($newTypeId, $row['type_id'], 'Unable to update attribute value!');
     }
 
@@ -277,7 +277,7 @@ class CommandTest extends TestCase
             'id' => 1,
         ]);
         $this->assertEquals(1, $command->execute(), 'Unable to update via replace!');
-        list($row) = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
+        [$row] = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
         $this->assertEquals($newTypeId, $row['type_id'], 'Unable to update attribute value!');
     }
 
@@ -306,7 +306,7 @@ class CommandTest extends TestCase
         );
         $this->assertEquals(1, $command->execute(), 'Unable to execute update!');
 
-        list($row) = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
+        [$row] = $db->createCommand('SELECT * FROM yii2_test_rt_index')->queryAll();
         $this->assertEquals($newTypeId, $row['type_id'], 'Unable to update attribute value!');
     }
 

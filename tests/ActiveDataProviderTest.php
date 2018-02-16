@@ -1,13 +1,13 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\sphinx\ActiveDataProvider;
 use yii\sphinx\Query;
 use Yii;
 use yii\web\Request;
-use yiiunit\extensions\sphinx\data\ar\ActiveRecord;
-use yiiunit\extensions\sphinx\data\ar\ArticleIndex;
+use yiiunit\sphinx\data\ar\ActiveRecord;
+use yiiunit\sphinx\data\ar\ArticleIndex;
 
 /**
  * @group sphinx

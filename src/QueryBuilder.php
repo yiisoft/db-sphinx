@@ -8,7 +8,7 @@
 namespace yii\sphinx;
 
 use yii\base\InvalidConfigException;
-use yii\base\InvalidParamException;
+use yii\base\InvalidArgumentException;
 use yii\base\NotSupportedException;
 use yii\base\BaseObject;
 use yii\db\Exception;
@@ -532,7 +532,7 @@ class QueryBuilder extends BaseObject
 
         foreach ($indexes as $i => $index) {
             if ($index instanceof Query) {
-                list($sql, $params) = $this->build($index, $params);
+                [$sql, $params] = $this->build($index, $params);
                 $indexes[$i] = "($sql) " . $this->db->quoteIndexName($i);
             } elseif (is_string($i)) {
                 if (strpos($index, '(') === false) {
@@ -833,12 +833,12 @@ class QueryBuilder extends BaseObject
      * @param array $operands the SQL expressions to connect.
      * @param array $params the binding parameters to be populated
      * @return string the generated SQL expression
-     * @throws InvalidParamException if wrong number of operands have been given.
+     * @throws InvalidArgumentException if wrong number of operands have been given.
      */
     public function buildNotCondition($indexes, $operator, $operands, &$params)
     {
         if (count($operands) != 1) {
-            throw new InvalidParamException("Operator '$operator' requires exactly one operand.");
+            throw new InvalidArgumentException("Operator '$operator' requires exactly one operand.");
         }
 
         $operand = reset($operands);
@@ -868,7 +868,7 @@ class QueryBuilder extends BaseObject
             throw new Exception("Operator '$operator' requires three operands.");
         }
 
-        list($column, $value1, $value2) = $operands;
+        [$column, $value1, $value2] = $operands;
 
         if (strpos($column, '(') === false) {
             $quotedColumn = $this->db->quoteColumnName($column);
@@ -900,7 +900,7 @@ class QueryBuilder extends BaseObject
             throw new Exception("Operator '$operator' requires two operands.");
         }
 
-        list($column, $values) = $operands;
+        [$column, $values] = $operands;
 
         if ($column === []) {
             return '';
@@ -908,7 +908,7 @@ class QueryBuilder extends BaseObject
 
         if ($values instanceof Query) {
             // sub-query
-            list($sql, $params) = $this->build($values, $params);
+            [$sql, $params] = $this->build($values, $params);
             $column = (array) $column;
             if (is_array($column)) {
                 foreach ($column as $i => $col) {
@@ -1019,18 +1019,18 @@ class QueryBuilder extends BaseObject
      *   the values will be automatically enclosed within a pair of percentage characters.
      * @param array $params the binding parameters to be populated
      * @return string the generated SQL expression
-     * @throws InvalidParamException if wrong number of operands have been given.
+     * @throws InvalidArgumentException if wrong number of operands have been given.
      */
     public function buildLikeCondition($indexes, $operator, $operands, &$params)
     {
         if (!isset($operands[0], $operands[1])) {
-            throw new InvalidParamException("Operator '$operator' requires two operands.");
+            throw new InvalidArgumentException("Operator '$operator' requires two operands.");
         }
 
         $escape = isset($operands[2]) ? $operands[2] : ['%'=>'\%', '_'=>'\_', '\\'=>'\\\\'];
         unset($operands[2]);
 
-        list($column, $values) = $operands;
+        [$column, $values] = $operands;
 
         if (!is_array($values)) {
             $values = [$values];
@@ -1075,15 +1075,15 @@ class QueryBuilder extends BaseObject
      * @param array $operands contains two column names.
      * @param array $params the binding parameters to be populated
      * @return string the generated SQL expression
-     * @throws InvalidParamException if count($operands) is not 2
+     * @throws InvalidArgumentException if count($operands) is not 2
      */
     public function buildSimpleCondition($indexes, $operator, $operands, &$params)
     {
         if (count($operands) !== 2) {
-            throw new InvalidParamException("Operator '$operator' requires two operands.");
+            throw new InvalidArgumentException("Operator '$operator' requires two operands.");
         }
 
-        list($column, $value) = $operands;
+        [$column, $value] = $operands;
 
         $value = $this->composeColumnValue($indexes, $column, $value, $params);
 

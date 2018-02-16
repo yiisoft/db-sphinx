@@ -47,7 +47,7 @@ use yii\db\ActiveRelationTrait;
  * {
  *     public function getSource()
  *     {
- *         return $this->hasOne('db', ArticleDb::className(), ['id' => 'id']);
+ *         return $this->hasOne('db', ArticleDb::class, ['id' => 'id']);
  *     }
  *
  *     public function getSnippetSource()
@@ -218,7 +218,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
             } elseif (is_array($this->via)) {
                 // via relation
                 /* @var $viaQuery ActiveQuery */
-                list($viaName, $viaQuery) = $this->via;
+                [$viaName, $viaQuery] = $this->via;
                 if ($viaQuery->multiple) {
                     $viaModels = $viaQuery->all();
                     $this->primaryModel->populateRelation($viaName, $viaModels);

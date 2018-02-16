@@ -142,7 +142,7 @@ abstract class ActiveRecord extends BaseActiveRecord
      */
     public static function find()
     {
-        return Yii::createObject(ActiveQuery::className(), [get_called_class()]);
+        return Yii::createObject(ActiveQuery::class, [get_called_class()]);
     }
 
     /**
@@ -272,7 +272,7 @@ abstract class ActiveRecord extends BaseActiveRecord
      */
     public function getSnippetSource()
     {
-        throw new NotSupportedException($this->className() . ' does not provide snippet source.');
+        throw new NotSupportedException(get_class($this) . ' does not provide snippet source.');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx\data\ar;
+namespace yiiunit\sphinx\data\ar;
 
 class ArticleIndex extends ActiveRecord
 {
@@ -16,17 +16,17 @@ class ArticleIndex extends ActiveRecord
 
     public function getSource()
     {
-        return $this->hasOne(ArticleDb::className(), ['id' => 'id']);
+        return $this->hasOne(ArticleDb::class, ['id' => 'id']);
     }
 
     public function getSourceCompositeLink()
     {
-        return $this->hasOne(ArticleDb::className(), ['id' => 'id', 'author_id' => 'author_id']);
+        return $this->hasOne(ArticleDb::class, ['id' => 'id', 'author_id' => 'author_id']);
     }
 
     public function getTags()
     {
-        return $this->hasMany(TagDb::className(), ['id' => 'tag']);
+        return $this->hasMany(TagDb::class, ['id' => 'tag']);
     }
 
     /**

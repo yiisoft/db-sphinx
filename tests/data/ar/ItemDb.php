@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\extensions\sphinx\data\ar;
+namespace yiiunit\sphinx\data\ar;
 
 class ItemDb extends ActiveRecordDb
 {

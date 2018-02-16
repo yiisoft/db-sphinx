@@ -1,11 +1,11 @@
 <?php
 
-namespace yiiunit\extensions\sphinx;
+namespace yiiunit\sphinx;
 
 use yii\sphinx\ActiveQuery;
-use yiiunit\extensions\sphinx\data\ar\ActiveRecord;
-use yiiunit\extensions\sphinx\data\ar\ArticleIndex;
-use yiiunit\extensions\sphinx\data\ar\RtIndex;
+use yiiunit\sphinx\data\ar\ActiveRecord;
+use yiiunit\sphinx\data\ar\ArticleIndex;
+use yiiunit\sphinx\data\ar\RtIndex;
 
 /**
  * @group sphinx

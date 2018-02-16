@@ -66,8 +66,8 @@ class Connection extends \yii\db\Connection
      * {@inheritdoc}
      */
     public $schemaMap = [
-        'mysqli' => 'yii\sphinx\Schema',   // MySQL
-        'mysql' => 'yii\sphinx\Schema',    // MySQL
+        'mysqli' => Schema::class,   // MySQL
+        'mysql' => Schema::class,    // MySQL
     ];
     /**
      * @var bool whether to enable conversion of the float query params into the direct literal SQL insertion.
