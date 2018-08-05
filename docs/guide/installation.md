@@ -1,5 +1,4 @@
-Installation
-============
+# Installation
 
 ## Requirements
 
@@ -10,19 +9,9 @@ higher is required.
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Either run
-
 ```
-php composer.phar require --prefer-dist yiisoft/yii2-sphinx
+composer require --prefer-dist yiisoft/yii-sphinx
 ```
-
-or add
-
-```json
-"yiisoft/yii2-sphinx": "~2.1.0"
-```
-
-to the require section of your composer.json.
 
 ## Configuration
 

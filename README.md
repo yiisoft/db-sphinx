@@ -2,20 +2,20 @@
     <a href="http://sphinxsearch.com" target="_blank" rel="external">
         <img src="http://sphinxsearch.com/images/logo.png" height="55px">
     </a>
-    <h1 align="center">Sphinx Extension for Yii 2</h1>
+    <h1 align="center">Yii Framework Sphinx full text search engine extension</h1>
     <br>
 </p>
 
-This extension adds [Sphinx](http://sphinxsearch.com/docs) full text search engine extension for the [Yii framework 2.0](http://www.yiiframework.com).
+This extension adds [Sphinx](http://sphinxsearch.com/docs) full text search engine extension for the [Yii framework](http://www.yiiframework.com).
 It supports all Sphinx features including [Real-time Indexes](http://sphinxsearch.com/docs/current.html#rt-indexes).
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-sphinx/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-sphinx)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-sphinx/downloads.png)](https://packagist.org/packages/yiisoft/yii2-sphinx)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-sphinx.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-sphinx)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii-sphinx/v/stable.png)](https://packagist.org/packages/yiisoft/yii-sphinx)
+[![Total Downloads](https://poser.pugx.org/yiisoft/yii-sphinx/downloads.png)](https://packagist.org/packages/yiisoft/yii-sphinx)
+[![Build Status](https://travis-ci.org/yiisoft/yii-sphinx.svg?branch=master)](https://travis-ci.org/yiisoft/yii-sphinx)
 
 
 Requirements
@@ -30,20 +30,9 @@ Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Either run
-
 ```
-php composer.phar require --prefer-dist yiisoft/yii2-sphinx
+composer require --prefer-dist yiisoft/yii-sphinx
 ```
-
-or add
-
-```json
-"yiisoft/yii2-sphinx": "~2.1.0"
-```
-
-to the require section of your composer.json.
-
 
 Configuration
 -------------

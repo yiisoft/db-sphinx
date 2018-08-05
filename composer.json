@@ -1,15 +1,15 @@
 {
-    "name": "yiisoft/yii2-sphinx",
-    "description": "Sphinx full text search engine extension for the Yii framework",
-    "keywords": ["yii2", "sphinx", "active-record", "search", "fulltext"],
-    "type": "yii2-extension",
+    "name": "yiisoft/yii-sphinx",
+    "description": "Yii Framework Sphinx full text search engine extension",
+    "keywords": ["yii", "sphinx", "active-record", "search", "fulltext"],
+    "type": "library",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2-sphinx/issues",
+        "issues": "https://github.com/yiisoft/yii-sphinx/issues",
         "forum": "http://www.yiiframework.com/forum/",
         "wiki": "http://www.yiiframework.com/wiki/",
         "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2-sphinx"
+        "source": "https://github.com/yiisoft/yii-sphinx"
     },
     "authors": [
         {
@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "2.1.x-dev",
+        "yiisoft/core": "^1.0",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*"
     },
@@ -36,7 +36,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
