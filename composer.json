@@ -1,5 +1,5 @@
 {
-    "name": "yiisoft/yii-sphinx",
+    "name": "yiisoft/db-sphinx",
     "description": "Yii Framework Sphinx full text search engine extension",
     "keywords": ["yii", "sphinx", "active-record", "search", "fulltext"],
     "type": "library",
