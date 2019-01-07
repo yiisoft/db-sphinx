@@ -13,9 +13,9 @@ For license information check the [LICENSE](LICENSE.md)-file.
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii-sphinx/v/stable.png)](https://packagist.org/packages/yiisoft/yii-sphinx)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii-sphinx/downloads.png)](https://packagist.org/packages/yiisoft/yii-sphinx)
-[![Build Status](https://travis-ci.org/yiisoft/yii-sphinx.svg?branch=master)](https://travis-ci.org/yiisoft/yii-sphinx)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/db-sphinx/v/stable.png)](https://packagist.org/packages/yiisoft/db-sphinx)
+[![Total Downloads](https://poser.pugx.org/yiisoft/db-sphinx/downloads.png)](https://packagist.org/packages/yiisoft/db-sphinx)
+[![Build Status](https://travis-ci.org/yiisoft/db-sphinx.svg?branch=master)](https://travis-ci.org/yiisoft/db-sphinx)
 
 
 Requirements
@@ -31,7 +31,7 @@ Installation
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 ```
-composer require --prefer-dist yiisoft/yii-sphinx
+composer require --prefer-dist yiisoft/db-sphinx
 ```
 
 Configuration
