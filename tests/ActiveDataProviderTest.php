@@ -4,7 +4,7 @@ namespace yiiunit\sphinx;
 
 use yii\sphinx\ActiveDataProvider;
 use yii\sphinx\Query;
-use Yii;
+use yii\helpers\Yii;
 use yii\web\Request;
 use yiiunit\sphinx\data\ar\ActiveRecord;
 use yiiunit\sphinx\data\ar\ArticleIndex;

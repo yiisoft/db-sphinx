@@ -7,7 +7,7 @@
 
 namespace yii\sphinx;
 
-use yii\base\InvalidCallException;
+use yii\exceptions\InvalidCallException;
 use yii\db\ActiveQueryInterface;
 use yii\db\ActiveQueryTrait;
 use yii\db\ActiveRelationTrait;
