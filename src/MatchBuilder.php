@@ -7,7 +7,7 @@
 
 namespace yii\sphinx;
 
-use yii\base\InvalidArgumentException;
+use yii\exceptions\InvalidArgumentException;
 use yii\base\BaseObject;
 use yii\db\Expression;
 

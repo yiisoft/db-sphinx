@@ -7,8 +7,8 @@
 
 namespace yii\sphinx;
 
-use Yii;
-use yii\base\NotSupportedException;
+use yii\helpers\Yii;
+use yii\exceptions\NotSupportedException;
 use yii\db\Exception;
 
 /**

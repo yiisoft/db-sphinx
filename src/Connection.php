@@ -7,7 +7,7 @@
 
 namespace yii\sphinx;
 
-use yii\base\NotSupportedException;
+use yii\exceptions\NotSupportedException;
 
 /**
  * Connection represents the Sphinx connection via MySQL protocol.

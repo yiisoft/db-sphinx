@@ -2,7 +2,7 @@
 
 namespace yiiunit\sphinx;
 
-use yii\caching\FileCache;
+use yii\cache\FileCache;
 
 /**
  * @group sphinx

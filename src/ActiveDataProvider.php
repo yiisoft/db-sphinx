@@ -7,8 +7,8 @@
 
 namespace yii\sphinx;
 
-use yii\base\InvalidCallException;
-use yii\base\InvalidConfigException;
+use yii\exceptions\InvalidCallException;
+use yii\exceptions\InvalidConfigException;
 
 /**
  * ActiveDataProvider is an enhanced version of [[\yii\data\ActiveDataProvider]] specific to the Sphinx.

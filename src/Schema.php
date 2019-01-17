@@ -8,10 +8,10 @@
 namespace yii\sphinx;
 
 use yii\base\BaseObject;
-use yii\caching\Cache;
-use Yii;
-use yii\caching\TagDependency;
+use yii\cache\Cache;
+use yii\cache\TagDependency;
 use yii\db\Exception;
+use yii\helpers\Yii;
 
 /**
  * Schema represents the Sphinx schema information.

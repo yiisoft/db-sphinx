@@ -7,7 +7,7 @@
 
 namespace yii\sphinx;
 
-use yii\base\InvalidConfigException;
+use yii\exceptions\InvalidConfigException;
 use yii\test\BaseActiveFixture;
 
 /**

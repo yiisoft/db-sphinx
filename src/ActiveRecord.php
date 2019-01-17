@@ -7,12 +7,12 @@
 
 namespace yii\sphinx;
 
-use yii\base\InvalidConfigException;
-use yii\base\NotSupportedException;
+use yii\exceptions\InvalidConfigException;
+use yii\exceptions\NotSupportedException;
 use yii\db\BaseActiveRecord;
 use yii\db\StaleObjectException;
 use yii\helpers\Inflector;
-use Yii;
+use yii\helpers\Yii;
 use yii\helpers\StringHelper;
 
 /**

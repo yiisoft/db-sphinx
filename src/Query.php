@@ -7,9 +7,9 @@
 
 namespace yii\sphinx;
 
-use Yii;
-use yii\base\InvalidCallException;
-use yii\base\NotSupportedException;
+use yii\helpers\Yii;
+use yii\exceptions\InvalidCallException;
+use yii\exceptions\NotSupportedException;
 use yii\db\Expression;
 
 /**
