@@ -12,13 +12,13 @@
 Для этого запустите
 
 ```
-php composer.phar require --prefer-dist yiisoft/yii2-sphinx
+php composer.phar require --prefer-dist yiisoft/db-sphinx
 ```
 
 или добавьте
 
 ```json
-"yiisoft/yii2-sphinx": "~2.0.0"
+"yiisoft/db-sphinx": "~1.0.0"
 ```
 
 в секцию require вашего composer.json.
