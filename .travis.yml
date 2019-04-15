@@ -37,4 +37,4 @@ before_script:
     fi
 
 script:
-  - phpunit $PHPUNIT_FLAGS
+  - ./vendor/bin/phpunit $PHPUNIT_FLAGS
