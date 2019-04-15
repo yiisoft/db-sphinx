@@ -167,18 +167,12 @@ class ActiveDataProviderTest extends TestCase
             ->from('yii2_test_article_index')
             ->match('Repeated');
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
 
         $this->assertEquals(1002, $provider->getTotalCount());
 
         $query->match('Excepturi');
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
 
         $this->assertEquals(29, $provider->getTotalCount());
     }

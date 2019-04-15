@@ -138,7 +138,11 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function destroyApplication()
     {
-        \Yii::$app = null;
+        if ($this->app && $this->app->has('session')) {
+            $this->app->getSession()->close();
+        }
+        $this->app = null;
+        $this->container->get('i18n')->setLocale('en-US');
     }
 
     /**
