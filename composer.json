@@ -20,7 +20,8 @@
     "require": {
         "yiisoft/yii-core": "^3.0@dev",
         "ext-pdo": "*",
-        "ext-pdo_mysql": "*"
+        "ext-pdo_mysql": "*",
+        "yiisoft/active-record": "^3.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.3",

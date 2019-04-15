@@ -9,7 +9,6 @@ namespace yii\sphinx;
 
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\NotSupportedException;
-use yii\db\BaseActiveRecord;
 use yii\db\StaleObjectException;
 use yii\helpers\Inflector;
 use yii\helpers\Yii;
@@ -27,7 +26,7 @@ use yii\helpers\StringHelper;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-abstract class ActiveRecord extends BaseActiveRecord
+abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
 {
     /**
      * The insert operation. This is mainly used when overriding [[transactions()]] to specify which operations are transactional.
