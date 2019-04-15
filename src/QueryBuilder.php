@@ -77,10 +77,9 @@ class QueryBuilder extends BaseObject
      * @param Connection $connection the Sphinx connection.
      * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($connection, $config = [])
+    public function __construct($connection)
     {
         $this->db = $connection;
-        parent::__construct($config);
     }
 
     /**

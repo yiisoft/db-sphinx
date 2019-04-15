@@ -62,7 +62,7 @@ abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
      */
     public static function getDb()
     {
-        return \Yii::$app->get('sphinx');
+        return \yii\helpers\Yii::getApp()->get('sphinx');
     }
 
     /**
@@ -267,7 +267,7 @@ abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
      * ```
      *
      * @return string snippet source string.
-     * @throws \yii\base\NotSupportedException if this is not supported by the Active Record class
+     * @throws \yii\exceptions\NotSupportedException if this is not supported by the Active Record class
      */
     public function getSnippetSource()
     {
@@ -381,7 +381,7 @@ abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
     /**
      * @see ActiveRecord::insert()
      */
-    private function insertInternal($attributes = null)
+    protected function insertInternal($attributes = null)
     {
         if (!$this->beforeSave(true)) {
             return false;

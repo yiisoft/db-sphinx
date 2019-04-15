@@ -8,6 +8,7 @@
 namespace yii\sphinx\gii\model;
 
 use Yii;
+use yii\helpers\Yii;
 use yii\sphinx\ActiveRecord;
 use yii\sphinx\Connection;
 use yii\sphinx\Schema;
@@ -240,9 +241,9 @@ class Generator extends \yii\gii\Generator
      */
     public function validateDb()
     {
-        if (!Yii::$app->has($this->db)) {
+        if (!Yii::getApp()->has($this->db)) {
             $this->addError('db', 'There is no application component named "' . $this->db . '".');
-        } elseif (!Yii::$app->get($this->db) instanceof Connection) {
+        } elseif (!Yii::getApp()->get($this->db) instanceof Connection) {
             $this->addError('db', 'The "' . $this->db . '" application component must be a Sphinx connection instance.');
         }
     }
@@ -385,6 +386,6 @@ class Generator extends \yii\gii\Generator
      */
     protected function getDbConnection()
     {
-        return Yii::$app->get($this->db, false);
+        return Yii::getApp()->get($this->db, false);
     }
 }

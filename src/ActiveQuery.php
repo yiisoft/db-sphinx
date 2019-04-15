@@ -7,6 +7,7 @@
 
 namespace yii\sphinx;
 
+use yii\di\Initiable;
 use yii\exceptions\InvalidCallException;
 use yii\activerecord\ActiveQueryInterface;
 use yii\activerecord\ActiveQueryTrait;
@@ -80,7 +81,7 @@ use yii\activerecord\ActiveRelationTrait;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class ActiveQuery extends Query implements ActiveQueryInterface
+class ActiveQuery extends Query implements ActiveQueryInterface, Initiable
 {
     use ActiveQueryTrait;
     use ActiveRelationTrait;
@@ -114,9 +115,8 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * an [[EVENT_INIT]] event. If you override this method, make sure you call the parent implementation at the end
      * to ensure triggering of the event.
      */
-    public function init()
+    public function init(): void
     {
-        parent::init();
         $this->trigger(self::EVENT_INIT);
     }
 
@@ -259,7 +259,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
     /**
      * Fetches the source for the snippets using [[ActiveRecord::getSnippetSource()]] method.
      * @param ActiveRecord[] $models raw query result rows.
-     * @throws \yii\base\InvalidCallException if [[asArray]] enabled.
+     * @throws \yii\exceptions\InvalidCallException if [[asArray]] enabled.
      * @return array snippet source strings
      */
     protected function fetchSnippetSourceFromModels($models)

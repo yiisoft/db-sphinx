@@ -9,7 +9,7 @@ namespace yii\sphinx;
 
 use yii\base\BaseObject;
 use yii\cache\Cache;
-use yii\cache\TagDependency;
+use yii\cache\dependencies\TagDependency;
 use yii\db\Exception;
 use yii\helpers\Yii;
 
@@ -133,7 +133,7 @@ class Schema extends BaseObject
 
         if ($db->enableSchemaCache && !in_array($name, $db->schemaCacheExclude, true)) {
             /* @var $cache Cache */
-            $cache = is_string($db->schemaCache) ? Yii::$app->get($db->schemaCache, false) : $db->schemaCache;
+            $cache = is_string($db->schemaCache) ? Yii::getApp()->get($db->schemaCache, false) : $db->schemaCache;
             if ($cache instanceof Cache) {
                 $key = $this->getCacheKey($name);
                 if ($refresh || ($index = $cache->get($key)) === false) {
@@ -299,7 +299,7 @@ class Schema extends BaseObject
     public function refresh()
     {
         /* @var $cache Cache */
-        $cache = is_string($this->db->schemaCache) ? Yii::$app->get($this->db->schemaCache, false) : $this->db->schemaCache;
+        $cache = is_string($this->db->schemaCache) ? Yii::getApp()->get($this->db->schemaCache, false) : $this->db->schemaCache;
         if ($this->db->enableSchemaCache && $cache instanceof Cache) {
             TagDependency::invalidate($cache, $this->getCacheTag());
         }

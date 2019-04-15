@@ -109,11 +109,10 @@ class MatchExpression extends BaseObject
      * @param array $params expression parameters.
      * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($match = null, $params = [], $config = [])
+    public function __construct($match = null, $params = [])
     {
         $this->match = $match;
         $this->params = $params;
-        parent::__construct($config);
     }
 
     /**
@@ -400,6 +399,6 @@ class MatchExpression extends BaseObject
      */
     protected function isEmpty($value)
     {
-        return $value === '' || $value === [] || $value === null || is_string($value) && trim($value) === '';
+        return $value === '' || $value === [] || $value === null || (is_string($value) && trim($value) === '');
     }
 }

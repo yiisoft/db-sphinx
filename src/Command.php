@@ -7,7 +7,6 @@
 
 namespace yii\sphinx;
 
-use yii\helpers\Yii;
 use yii\exceptions\NotSupportedException;
 use yii\db\Exception;
 
@@ -293,8 +292,8 @@ class Command extends \yii\db\Command
                 $name = ':' . $name;
             }
             // unable to use `str_replace()` because particular param name may be a substring of another param name
-            $sql = preg_replace('/' . preg_quote($name) . '\b/s', $value, $sql);
-        };
+            $sql = preg_replace('/' . preg_quote($name, '/') . '\b/s', $value, $sql);
+        }
 
         return $sql;
     }
