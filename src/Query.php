@@ -177,7 +177,7 @@ class Query extends \yii\db\Query
     {
         $this->setConnection($db);
         $db = $this->getConnection();
-        list ($sql, $params) = $db->getQueryBuilder()->build($this);
+        list($sql, $params) = $db->getQueryBuilder()->build($this);
 
         return $db->createCommand($sql, $params);
     }
@@ -197,7 +197,7 @@ class Query extends \yii\db\Query
     {
         $row = parent::one($db);
         if ($row !== false) {
-            list ($row) = $this->fillUpSnippets([$row]);
+            list($row) = $this->fillUpSnippets([$row]);
         }
 
         return $row;
