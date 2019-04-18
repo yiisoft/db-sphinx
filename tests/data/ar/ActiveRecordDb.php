@@ -5,7 +5,7 @@ namespace yiiunit\sphinx\data\ar;
 /**
  * Test regular DB ActiveRecord class
  */
-class ActiveRecordDb extends \yii\db\ActiveRecord
+class ActiveRecordDb extends \yii\activerecord\ActiveRecord
 {
     public static $db;
 

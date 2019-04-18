@@ -2,6 +2,7 @@
 
 namespace yiiunit\sphinx;
 
+use yii\base\Application;
 use yii\helpers\ArrayHelper;
 use yii\sphinx\Connection;
 use yii\helpers\Yii;
@@ -37,6 +38,32 @@ class TestCase extends \PHPUnit\Framework\TestCase
      * @var \yii\db\Connection database connection instance.
      */
     protected $db;
+
+    /**
+     * @var Application
+     */
+    protected $app;
+    /**
+     * @var null|\yii\di\Container
+     */
+    protected $container;
+
+    /**
+     * @var null|\yii\di\Factory
+     */
+    protected $factory;
+
+    protected $defaultAppConfig = [];
+
+    public function __construct($name = null, array $data = [], $dataName = '')
+    {
+        parent::__construct($name, $data, $dataName);
+        $this->container = Yii::getContainer();
+        if ($this->container !== null) {
+            $this->factory = $this->container->get('factory');
+            $this->defaultAppConfig = $this->container->getDefinition('app');
+        }
+    }
 
     protected function setUp()
     {
@@ -79,18 +106,22 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Populates Yii::$app with a new application
      * The application will be destroyed on tearDown() automatically.
      * @param array $config The application configuration, if needed
      * @param string $appClass name of the application class to create
      */
-    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
+    protected function mockApplication($config = [], $appClass = null, array $services = [])
     {
-        new $appClass(ArrayHelper::merge([
-            'id' => 'testapp',
-            'basePath' => __DIR__,
-            'vendorPath' => $this->getVendorPath(),
-        ], $config));
+        if ($this->app && empty($config) && empty($appClass)) {
+            return;
+        }
+        if ($appClass) {
+            $config['__class'] = $appClass;
+        }
+        $this->container->setAll(array_merge($services, [
+            'app' => array_merge($this->defaultAppConfig, $config),
+        ]));
+        $this->app = $this->container->get('app');
     }
 
     protected function getVendorPath()
@@ -107,7 +138,11 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function destroyApplication()
     {
-        \Yii::$app = null;
+        if ($this->app && $this->app->has('session')) {
+            $this->app->getSession()->close();
+        }
+        $this->app = null;
+        $this->container->get('i18n')->setLocale('en-US');
     }
 
     /**

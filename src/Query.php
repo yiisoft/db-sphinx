@@ -164,7 +164,7 @@ class Query extends \yii\db\Query
      */
     protected function defaultConnection()
     {
-        return Yii::$app->get('sphinx');
+        return Yii::getApp()->get('sphinx');
     }
 
     /**

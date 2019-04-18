@@ -27,19 +27,13 @@ class ActiveDataProviderTest extends TestCase
         $query = new Query();
         $query->from('yii2_test_article_index');
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
         $models = $provider->getModels();
         $this->assertEquals(20, count($models));
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-            'pagination' => [
-                'pageSize' => 1,
-            ]
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
+        $provider->setPagination([
+            'pageSize' => 1,
         ]);
         $models = $provider->getModels();
         $this->assertEquals(1, count($models));
@@ -47,20 +41,16 @@ class ActiveDataProviderTest extends TestCase
 
     public function testActiveQuery()
     {
-        $provider = new ActiveDataProvider([
-            'query' => ArticleIndex::find()->orderBy('id ASC'),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), ArticleIndex::find()->orderBy('id ASC'));
         $models = $provider->getModels();
         $this->assertEquals(20, count($models));
         $this->assertTrue($models[0] instanceof ArticleIndex);
         $this->assertTrue($models[1] instanceof ArticleIndex);
         $this->assertEquals([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], $provider->getKeys());
 
-        $provider = new ActiveDataProvider([
-            'query' => ArticleIndex::find(),
-            'pagination' => [
-                'pageSize' => 1,
-            ]
+        $provider = new ActiveDataProvider($this->getConnection(), ArticleIndex::find());
+        $provider->setPagination([
+            'pageSize' => 1,
         ]);
         $models = $provider->getModels();
         $this->assertEquals(1, count($models));
@@ -77,10 +67,7 @@ class ActiveDataProviderTest extends TestCase
             'author_id'
         ]);
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
         $models = $provider->getModels();
         $this->assertEquals(20, count($models));
         $this->assertEquals(10, count($provider->getFacet('author_id')));
@@ -95,13 +82,8 @@ class ActiveDataProviderTest extends TestCase
             ->from('yii2_test_article_index')
             ->showMeta(true);
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-            'pagination' => [
-                'pageSize' => 1,
-            ]
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
+        $provider->setPagination(['pageSize' => 1]);
         $models = $provider->getModels();
         $this->assertEquals(1, count($models));
         $this->assertEquals(1002, $provider->getTotalCount());
@@ -116,20 +98,15 @@ class ActiveDataProviderTest extends TestCase
     {
         $request = new Request();
         $request->setQueryParams(['page' => 2]);
-        Yii::$app->set('request', $request);
+        Yii::getApp()->set('request', $request);
 
         $query = (new Query())
             ->from('yii2_test_article_index')
             ->orderBy(['id' => SORT_ASC])
             ->showMeta(true);
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-            'pagination' => [
-                'pageSize' => 1,
-            ]
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
+        $provider->setPagination(['pageSize' => 1]);
         $models = $provider->getModels();
         $this->assertEquals(2, $models[0]['id']);
     }
@@ -143,20 +120,14 @@ class ActiveDataProviderTest extends TestCase
     {
         $request = new Request();
         $request->setQueryParams(['page' => 99999]);
-        Yii::$app->set('request', $request);
+        Yii::getApp()->set('request', $request);
 
         $query = (new Query())
             ->from('yii2_test_article_index')
             ->orderBy(['id' => SORT_ASC]);
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-            'pagination' => [
-                'pageSize' => 100,
-                'validatePage' => false,
-            ]
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
+        $provider->setPagination(['pageSize' => 100, 'validatePage' => false,]);
         $models = $provider->getModels();
         $this->assertEmpty($models); // no exception
     }
@@ -167,18 +138,12 @@ class ActiveDataProviderTest extends TestCase
             ->from('yii2_test_article_index')
             ->match('Repeated');
 
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
 
         $this->assertEquals(1002, $provider->getTotalCount());
 
         $query->match('Excepturi');
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'db' => $this->getConnection(),
-        ]);
+        $provider = new ActiveDataProvider($this->getConnection(), $query);
 
         $this->assertEquals(29, $provider->getTotalCount());
     }

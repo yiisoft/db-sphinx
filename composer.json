@@ -17,15 +17,19 @@
             "email": "klimov.paul@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "yiisoft/yii-core": "^3.0@dev",
         "ext-pdo": "*",
-        "ext-pdo_mysql": "*"
+        "ext-pdo_mysql": "*",
+        "yiisoft/active-record": "^3.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.3",
+        "yiisoft/yii-web": "^3.0@dev",
         "yiisoft/di": "dev-master",
         "yiisoft/db": "dev-master",
+        "yiisoft/db-mysql": "dev-master",
         "yiisoft/yii-console": "dev-master",
         "yiisoft/log": "dev-master",
         "yiisoft/cache": "dev-master",
@@ -46,6 +50,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
+        },
+        "config-plugin": {
+            "params": "config/params.php",
+            "common": "config/common.php",
+            "tests": "config/tests.php"
         }
     }
 }

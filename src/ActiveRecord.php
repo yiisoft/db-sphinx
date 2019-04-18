@@ -9,7 +9,6 @@ namespace yii\sphinx;
 
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\NotSupportedException;
-use yii\db\BaseActiveRecord;
 use yii\db\StaleObjectException;
 use yii\helpers\Inflector;
 use yii\helpers\Yii;
@@ -27,7 +26,7 @@ use yii\helpers\StringHelper;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-abstract class ActiveRecord extends BaseActiveRecord
+abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
 {
     /**
      * The insert operation. This is mainly used when overriding [[transactions()]] to specify which operations are transactional.
@@ -63,7 +62,7 @@ abstract class ActiveRecord extends BaseActiveRecord
      */
     public static function getDb()
     {
-        return \Yii::$app->get('sphinx');
+        return \yii\helpers\Yii::getApp()->get('sphinx');
     }
 
     /**
@@ -268,7 +267,7 @@ abstract class ActiveRecord extends BaseActiveRecord
      * ```
      *
      * @return string snippet source string.
-     * @throws \yii\base\NotSupportedException if this is not supported by the Active Record class
+     * @throws \yii\exceptions\NotSupportedException if this is not supported by the Active Record class
      */
     public function getSnippetSource()
     {
@@ -382,7 +381,7 @@ abstract class ActiveRecord extends BaseActiveRecord
     /**
      * @see ActiveRecord::insert()
      */
-    private function insertInternal($attributes = null)
+    protected function insertInternal($attributes = null)
     {
         if (!$this->beforeSave(true)) {
             return false;

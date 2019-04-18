@@ -12,7 +12,7 @@ class RtIndexFixture extends ActiveFixture
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         $this->dataFile = __DIR__ . '/../fixtures/' . RtIndex::indexName() . '.php';
         parent::init();

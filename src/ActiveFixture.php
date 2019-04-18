@@ -60,7 +60,7 @@ class ActiveFixture extends BaseActiveFixture
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         if (!isset($this->modelClass) && !isset($this->indexName)) {
@@ -121,7 +121,7 @@ class ActiveFixture extends BaseActiveFixture
 
     /**
      * @return IndexSchema the schema information of the database table associated with this fixture.
-     * @throws \yii\base\InvalidConfigException if the index does not exist or not a runtime type
+     * @throws \yii\exceptions\InvalidConfigException if the index does not exist or not a runtime type
      */
     public function getIndexSchema()
     {
