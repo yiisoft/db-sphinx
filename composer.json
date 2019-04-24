@@ -20,6 +20,9 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii-core": "^3.0@dev",
+        "yiisoft/inflector": "^3.0@dev",
+        "yiisoft/db": "^3.0@dev",
+        "yiisoft/strings": "^3.0@dev",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "yiisoft/active-record": "^3.0@dev"
@@ -28,7 +31,7 @@
         "phpunit/phpunit": "^7.3",
         "yiisoft/yii-web": "^3.0@dev",
         "yiisoft/di": "dev-master",
-        "yiisoft/db": "dev-master",
+        "yiisoft/arrays": "^3.0@dev",
         "yiisoft/db-mysql": "dev-master",
         "yiisoft/yii-console": "dev-master",
         "yiisoft/log": "dev-master",

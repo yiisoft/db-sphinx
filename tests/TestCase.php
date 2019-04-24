@@ -3,7 +3,7 @@
 namespace yiiunit\sphinx;
 
 use yii\base\Application;
-use yii\helpers\ArrayHelper;
+use Yiisoft\Arrays\ArrayHelper;
 use yii\sphinx\Connection;
 use yii\helpers\Yii;
 
