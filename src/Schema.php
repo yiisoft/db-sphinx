@@ -8,8 +8,8 @@
 namespace yii\sphinx;
 
 use yii\base\BaseObject;
-use yii\cache\Cache;
-use yii\cache\dependencies\TagDependency;
+use Yiisoft\Cache\Cache;
+use Yiisoft\Cache\Dependencies\TagDependency;
 use yii\db\Exception;
 use yii\helpers\Yii;
 
