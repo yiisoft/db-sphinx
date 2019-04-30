@@ -13,7 +13,7 @@ use yii\sphinx\ActiveRecord;
 use yii\sphinx\Connection;
 use yii\sphinx\Schema;
 use yii\gii\CodeFile;
-use Yiisoft\Helpers\InflectorHelper;
+use Yiisoft\Inflector\InflectorHelper;
 
 /**
  * This generator will generate one or multiple ActiveRecord classes for the specified Sphinx index.

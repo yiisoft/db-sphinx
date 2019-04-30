@@ -10,7 +10,7 @@ namespace yii\sphinx;
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\NotSupportedException;
 use yii\db\StaleObjectException;
-use Yiisoft\Helpers\InflectorHelper;
+use Yiisoft\Inflector\InflectorHelper;
 use yii\helpers\Yii;
 use Yiisoft\Strings\StringHelper;
 
