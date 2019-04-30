@@ -12,7 +12,7 @@ use yii\helpers\Yii;
 use yii\sphinx\ActiveRecord;
 use yii\sphinx\Connection;
 use yii\sphinx\Schema;
-use yii\gii\CodeFile;
+use Yiisoft\Yii\Gii\CodeFile;
 use Yiisoft\Inflector\InflectorHelper;
 
 /**
@@ -21,7 +21,7 @@ use Yiisoft\Inflector\InflectorHelper;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Generator extends \yii\gii\Generator
+class Generator extends \Yiisoft\Yii\Gii\Generator
 {
     public $db = 'sphinx';
     public $ns = 'app\models';

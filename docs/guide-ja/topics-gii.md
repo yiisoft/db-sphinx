@@ -11,7 +11,7 @@ return [
     'modules' => [
         // ...
         'gii' => [
-            'class' => 'yii\gii\Module',
+            'class' => 'Yiisoft\Yii\Gii\Module',
             'generators' => [
                 'sphinxModel' => [
                     'class' => 'yii\sphinx\gii\model\Generator'
