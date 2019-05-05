@@ -1,11 +1,11 @@
 Working with data providers
 ===========================
 
-You can use [[\yii\data\ActiveDataProvider]] with the [[\yii\sphinx\Query]] and [[\yii\sphinx\ActiveQuery]]:
+You can use [[\yii\data\ActiveDataProvider]] with the [[\Yiisoft\Db\Sphinx\Query]] and [[\Yiisoft\Db\Sphinx\ActiveQuery]]:
 
 ```php
 use yii\data\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('yii2_test_article_index')->match('development');
@@ -32,12 +32,12 @@ $models = $provider->getModels();
 ```
 
 However, if you want to use ['facet' feature](usage-facets.md) or [query meta information](usage-meta.md) benefit
-you need to use `yii\sphinx\ActiveDataProvider`. It allows preparing total item count using query 'meta' information
+you need to use `Yiisoft\Db\Sphinx\ActiveDataProvider`. It allows preparing total item count using query 'meta' information
 and fetching of the facet results:
 
 ```php
-use yii\sphinx\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\ActiveDataProvider;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('idx_item')

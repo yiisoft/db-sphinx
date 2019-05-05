@@ -1,8 +1,8 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\sphinx\MatchExpression;
+use Yiisoft\Db\Sphinx\MatchExpression;
 
 class MatchExpressionTest extends TestCase
 {

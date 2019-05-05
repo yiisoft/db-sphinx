@@ -1,8 +1,8 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\sphinx\Connection;
+use Yiisoft\Db\Sphinx\Connection;
 
 /**
  * @group sphinx
@@ -36,7 +36,7 @@ class ConnectionTest extends TestCase
 
         $connection = new Connection();
         $connection->dsn = 'unknown::memory:';
-        $this->expectException('yii\db\Exception');
+        $this->expectException('Yiisoft\Db\Exception');
         $connection->open();
     }
 }

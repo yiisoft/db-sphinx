@@ -1,11 +1,11 @@
 Использование ActiveRecord
 ======================
 
-Это расширение предоставляет ActiveRecord решение, подобное [[\yii\db\ActiveRecord]].
-Чтобы объявить класс ActiveRecord, вам нужно расширить [[\yii\sphinx\ActiveRecord]] и реализовать метод `indexName`:
+Это расширение предоставляет ActiveRecord решение, подобное [[\Yiisoft\Db\ActiveRecord]].
+Чтобы объявить класс ActiveRecord, вам нужно расширить [[\Yiisoft\Db\Sphinx\ActiveRecord]] и реализовать метод `indexName`:
 
 ```php
-use yii\sphinx\ActiveRecord;
+use Yiisoft\Db\Sphinx\ActiveRecord;
 
 class Article extends ActiveRecord
 {

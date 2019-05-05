@@ -7,11 +7,11 @@
 SELECT * FROM idx_item FACET brand_id FACET categories;
 ```
 
-`yii\sphinx\Query` поддерживает композицию этого предложения, а также выборку фасетных результатов. Вы можете указать фасеты через `yii\sphinx\Query::facets`. Чтобы получать результаты с фасетами, вам нужно использовать метод `yii\sphinx\Query::search()`.
+`Yiisoft\Db\Sphinx\Query` поддерживает композицию этого предложения, а также выборку фасетных результатов. Вы можете указать фасеты через `Yiisoft\Db\Sphinx\Query::facets`. Чтобы получать результаты с фасетами, вам нужно использовать метод `Yiisoft\Db\Sphinx\Query::search()`.
 Для примера:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $results = $query->from('idx_item')
@@ -36,8 +36,8 @@ foreach ($results['facets']['brand_id'] as $frame) {
 Вы можете указать дополнительные опции фасета, такие как `select` или `order` используя формат массива:
 
 ```php
-use yii\db\Expression;
-use yii\sphinx\Query;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $results = $query->from('idx_item')

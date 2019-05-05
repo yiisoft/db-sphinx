@@ -1,10 +1,10 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
 use yii\base\Application;
 use Yiisoft\Arrays\ArrayHelper;
-use yii\sphinx\Connection;
+use Yiisoft\Db\Sphinx\Connection;
 use yii\helpers\Yii;
 
 /**
@@ -35,7 +35,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         'password' => '',
     ];
     /**
-     * @var \yii\db\Connection database connection instance.
+     * @var \Yiisoft\Db\Connection database connection instance.
      */
     protected $db;
 
@@ -148,7 +148,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * @param bool $reset whether to clean up the test database
      * @param bool $open whether to open test database
-     * @return \yii\sphinx\Connection
+     * @return \Yiisoft\Db\Sphinx\Connection
      */
     public function getConnection($reset = false, $open = true)
     {
@@ -186,14 +186,14 @@ class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * @param bool $reset whether to clean up the test database
      * @param bool $open whether to open and populate test database
-     * @return \yii\db\Connection
+     * @return \Yiisoft\Db\Connection
      */
     public function getDbConnection($reset = true, $open = true)
     {
         if (!$reset && $this->db) {
             return $this->db;
         }
-        $db = new \yii\db\Connection;
+        $db = new \Yiisoft\Db\Connection;
         $db->dsn = $this->dbConfig['dsn'];
         if (isset($this->dbConfig['username'])) {
             $db->username = $this->dbConfig['username'];

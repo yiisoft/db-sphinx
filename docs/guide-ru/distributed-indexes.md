@@ -28,7 +28,7 @@ index item_distributed
 Например:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // распределенный индекс с локальным
 $rows = (new Query())->from('item_distributed_with_local')

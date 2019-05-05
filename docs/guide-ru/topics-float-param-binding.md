@@ -6,13 +6,13 @@ PDO не предоставляет способ привязки парамет
 
 > syntax error, unexpected QUOTED_STRING, expecting CONST_INT or CONST_FLOAT
 
-Чтобы обойти эту проблему, любой параметр связывается с [[\yii\sphinx\Command]], какой точно PHP тип 'float' будет вставляться в содержимое SphinxQL как литерал вместо привязки.
+Чтобы обойти эту проблему, любой параметр связывается с [[\Yiisoft\Db\Sphinx\Command]], какой точно PHP тип 'float' будет вставляться в содержимое SphinxQL как литерал вместо привязки.
 
 Эта функция работает только в том случае, если значение является оригинальным PHP float (строки, содержащие float, не работают).
 Например:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // следующий код работает отлично:
 $rows = (new Query())->from('item_index')
@@ -34,7 +34,7 @@ $rows = (new Query())->from('item_index')
 Однако, если вы используете 'hash' условия над полями индекса, объявленными как 'float', преобразование типа будет выполняется автоматически:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // следующий код работает отлично, если 'price' - это поле float в 'item_index':
 $rows = (new Query())->from('item_index')
@@ -45,5 +45,5 @@ $rows = (new Query())->from('item_index')
 ```
 
 > Note: к тому моменту, когда вы это читаете, эта привязка к float, может быть уже исправлена на стороне сервера Sphinx, или другие опасения по поводу этой функции, что делает ее нежелательной. В этом случае вы можете отключить автоматическое преобразование параметров float через
-[[\yii\sphinx\Connection::enableFloatConversion]].
+[[\Yiisoft\Db\Sphinx\Connection::enableFloatConversion]].
 

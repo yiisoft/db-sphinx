@@ -1,11 +1,11 @@
 アクティブレコードを使用する
 ============================
 
-このエクステンションは [[\yii\db\ActiveRecord]] と類似したアクティブレコードのソリューションを提供しています。
-アクティブレコードクラスを宣言するためには、[[\yii\sphinx\ActiveRecord]] から拡張して、`indexName` メソッドを実装する必要があります。
+このエクステンションは [[\Yiisoft\Db\ActiveRecord]] と類似したアクティブレコードのソリューションを提供しています。
+アクティブレコードクラスを宣言するためには、[[\Yiisoft\Db\Sphinx\ActiveRecord]] から拡張して、`indexName` メソッドを実装する必要があります。
 
 ```php
-use yii\sphinx\ActiveRecord;
+use Yiisoft\Db\Sphinx\ActiveRecord;
 
 class Article extends ActiveRecord
 {

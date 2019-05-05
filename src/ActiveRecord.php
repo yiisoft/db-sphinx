@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\NotSupportedException;
-use yii\db\StaleObjectException;
+use Yiisoft\Db\StaleObjectException;
 use Yiisoft\Inflector\InflectorHelper;
 use yii\helpers\Yii;
 use Yiisoft\Strings\StringHelper;

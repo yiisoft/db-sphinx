@@ -5,14 +5,14 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\InvalidArgumentException;
 use yii\exceptions\NotSupportedException;
 use yii\base\BaseObject;
-use yii\db\Exception;
-use yii\db\Expression;
+use Yiisoft\Db\Exception;
+use Yiisoft\Db\Expression;
 
 /**
  * QueryBuilder builds a SELECT SQL statement based on the specification given as a [[Query]] object.
@@ -737,7 +737,7 @@ class QueryBuilder extends BaseObject
      * on how to specify a condition.
      * @param array $params the binding parameters to be populated
      * @return string the generated SQL expression
-     * @throws \yii\db\Exception if the condition is in bad format
+     * @throws \Yiisoft\Db\Exception if the condition is in bad format
      */
     public function buildCondition($indexes, $condition, &$params)
     {

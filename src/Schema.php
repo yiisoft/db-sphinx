@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\base\BaseObject;
 use Yiisoft\Cache\Cache;
 use Yiisoft\Cache\Dependencies\TagDependency;
-use yii\db\Exception;
+use Yiisoft\Db\Exception;
 use yii\helpers\Yii;
 
 /**

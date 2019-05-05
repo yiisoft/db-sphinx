@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\exceptions\InvalidArgumentException;
 use yii\base\BaseObject;
-use yii\db\Expression;
+use Yiisoft\Db\Expression;
 
 /**
  * MatchBuilder builds a MATCH SphinxQL expression based on the specification given as a [[MatchExpression]] object.

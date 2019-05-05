@@ -1,7 +1,7 @@
 Базовое использование
 ===========
 
-Поскольку это расширение использует протокол MySQL для доступа к Sphinx, оно разделяет базовый подход и множество кода из регулярного пакета `"yii\db"`. Запуск запросов SphinxQL очень похож на обычные SQL-запросы:
+Поскольку это расширение использует протокол MySQL для доступа к Sphinx, оно разделяет базовый подход и множество кода из регулярного пакета `"Yiisoft\Db"`. Запуск запросов SphinxQL очень похож на обычные SQL-запросы:
 
 ```php
 $sql = 'SELECT * FROM idx_item WHERE group_id = :group_id';
@@ -14,7 +14,7 @@ $rows = Yii::$app->sphinx->createCommand($sql, $params)->queryAll();
 Вы, также, можете использовать Query Builder:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $rows = $query->select('id, price')

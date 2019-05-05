@@ -1,8 +1,8 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\db\DataReader;
+use Yiisoft\Db\DataReader;
 
 /**
  * @group sphinx
@@ -78,7 +78,7 @@ class CommandTest extends TestCase
         $this->assertEquals(1, $command->queryScalar());
 
         $command = $db->createCommand('bad SQL');
-        $this->expectException('\yii\db\Exception');
+        $this->expectException('\Yiisoft\Db\Exception');
         $command->execute();
     }
 
@@ -139,7 +139,7 @@ class CommandTest extends TestCase
         $this->assertFalse($command->queryScalar());
 
         $command = $db->createCommand('bad SQL');
-        $this->expectException('\yii\db\Exception');
+        $this->expectException('\Yiisoft\Db\Exception');
         $command->query();
     }
 

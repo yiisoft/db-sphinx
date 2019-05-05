@@ -30,7 +30,7 @@ on your own.
 For example:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // distributed index with local
 $rows = (new Query())->from('item_distributed_with_local')

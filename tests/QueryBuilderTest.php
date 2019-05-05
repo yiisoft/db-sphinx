@@ -1,10 +1,10 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\db\Expression;
-use yii\sphinx\Query;
-use yii\sphinx\QueryBuilder;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Sphinx\QueryBuilder;
 
 class QueryBuilderTest extends TestCase
 {

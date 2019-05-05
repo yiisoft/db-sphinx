@@ -1,7 +1,7 @@
 基本的な使用方法
 ================
 
-このエクステンションは Sphinx にアクセスするために MySQL プロトコルを使用しているため、基本的なアプローチと多くのコードを通常の "yii\db" パッケージと共有しています。
+このエクステンションは Sphinx にアクセスするために MySQL プロトコルを使用しているため、基本的なアプローチと多くのコードを通常の "Yiisoft\Db" パッケージと共有しています。
 SphinxQL のクエリの実行は、通常の SQL クエリの実行と非常に似ています。
 
 ```php
@@ -15,7 +15,7 @@ $rows = Yii::$app->sphinx->createCommand($sql, $params)->queryAll();
 クエリビルダを使用することも出来ます。
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $rows = $query->select('id, price')

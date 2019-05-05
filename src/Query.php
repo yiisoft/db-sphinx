@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\helpers\Yii;
 use yii\exceptions\InvalidCallException;
 use yii\exceptions\NotSupportedException;
-use yii\db\Expression;
+use Yiisoft\Db\Expression;
 
 /**
  * Query represents a SELECT SQL statement.
@@ -44,7 +44,7 @@ use yii\db\Expression;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Query extends \yii\db\Query
+class Query extends \Yiisoft\Db\Query
 {
     /**
      * @var string|Expression text, which should be searched in fulltext mode.

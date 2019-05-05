@@ -1,10 +1,10 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\db\Expression;
-use yii\sphinx\MatchBuilder;
-use yii\sphinx\MatchExpression;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\MatchBuilder;
+use Yiisoft\Db\Sphinx\MatchExpression;
 
 class MatchBuilderTest extends TestCase
 {

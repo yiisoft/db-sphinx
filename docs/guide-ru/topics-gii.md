@@ -12,7 +12,7 @@ return [
             'class' => 'Yiisoft\Yii\Gii\Module',
             'generators' => [
                 'sphinxModel' => [
-                    'class' => 'yii\sphinx\gii\model\Generator'
+                    'class' => 'Yiisoft\Db\Sphinx\gii\model\Generator'
                 ]
             ],
         ],

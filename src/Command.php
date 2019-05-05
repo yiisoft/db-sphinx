@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\exceptions\NotSupportedException;
-use yii\db\Exception;
+use Yiisoft\Db\Exception;
 
 /**
  * Command represents a SQL statement to be executed against a Sphinx.
@@ -25,7 +25,7 @@ use yii\db\Exception;
  * $articles = $connection->createCommand("SELECT * FROM `idx_article` WHERE MATCH('programming')")->queryAll();
  * ```
  *
- * Command supports SQL statement preparation and parameter binding just as [[\yii\db\Command]] does.
+ * Command supports SQL statement preparation and parameter binding just as [[\Yiisoft\Db\Command]] does.
  *
  * Command also supports building SQL statements by providing methods such as [[insert()]],
  * [[update()]], etc. For example,
@@ -42,10 +42,10 @@ use yii\db\Exception;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Command extends \yii\db\Command
+class Command extends \Yiisoft\Db\Command
 {
     /**
-     * @var \yii\sphinx\Connection the Sphinx connection that this command is associated with.
+     * @var \Yiisoft\Db\Sphinx\Connection the Sphinx connection that this command is associated with.
      */
     public $db;
 

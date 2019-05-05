@@ -1,13 +1,13 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\sphinx\ActiveFixture;
+use Yiisoft\Db\Sphinx\ActiveFixture;
 use yii\test\FixtureTrait;
-use yiiunit\sphinx\data\ar\ActiveRecord;
-use yiiunit\sphinx\data\ar\RtIndex;
-use yiiunit\sphinx\data\fixture\MySphinxTestCase;
-use yiiunit\sphinx\data\fixture\RtIndexFixture;
+use Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord\ActiveRecord;
+use Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord\RtIndex;
+use Yiisoft\Db\Sphinx\Tests\Data\Fixture\MySphinxTestCase;
+use Yiisoft\Db\Sphinx\Tests\Data\Fixture\RtIndexFixture;
 
 class ActiveFixtureTest extends TestCase
 {

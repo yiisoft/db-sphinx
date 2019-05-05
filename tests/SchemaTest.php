@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
 use Yiisoft\Cache\FileCache;
 
@@ -26,7 +26,7 @@ class SchemaTest extends TestCase
         $indexes = $schema->getIndexSchemas();
         $this->assertEquals(count($schema->getIndexNames()), count($indexes));
         foreach ($indexes as $index) {
-            $this->assertInstanceOf('yii\sphinx\IndexSchema', $index);
+            $this->assertInstanceOf('Yiisoft\Db\Sphinx\IndexSchema', $index);
         }
     }
 
@@ -86,7 +86,7 @@ class SchemaTest extends TestCase
      */
     public function testGetSchemaPrimaryKey()
     {
-        /* @var $indexSchema \yii\sphinx\IndexSchema */
+        /* @var $indexSchema \Yiisoft\Db\Sphinx\IndexSchema */
         $indexSchema = $this->getConnection()->getSchema()->getIndexSchema('yii2_test_item_index');
         $this->assertEquals('id', $indexSchema->primaryKey);
 

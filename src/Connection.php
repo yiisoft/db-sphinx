@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\exceptions\NotSupportedException;
 
@@ -28,7 +28,7 @@ use yii\exceptions\NotSupportedException;
  * the Sphinx connection:
  *
  * ```php
- * $connection = new \yii\db\Connection([
+ * $connection = new \Yiisoft\Db\Connection([
  *     'dsn' => 'mysql:host=127.0.0.1;port=9306;',
  *     'username' => $username,
  *     'password' => $password,
@@ -47,12 +47,12 @@ use yii\exceptions\NotSupportedException;
  *
  * For more information about how to perform various DB queries, please refer to [[Command]].
  *
- * This class supports transactions exactly as "yii\db\Connection".
+ * This class supports transactions exactly as "Yiisoft\Db\Connection".
  *
- * Note: while this class extends "yii\db\Connection" some of its methods are not supported.
+ * Note: while this class extends "Yiisoft\Db\Connection" some of its methods are not supported.
  *
- * @method \yii\sphinx\Schema getSchema() The schema information for this Sphinx connection
- * @method \yii\sphinx\QueryBuilder getQueryBuilder() the query builder for this Sphinx connection
+ * @method \Yiisoft\Db\Sphinx\Schema getSchema() The schema information for this Sphinx connection
+ * @method \Yiisoft\Db\Sphinx\QueryBuilder getQueryBuilder() the query builder for this Sphinx connection
  *
  * @property string $lastInsertID The row ID of the last row inserted, or the last value retrieved from the
  * sequence object. This property is read-only.
@@ -60,7 +60,7 @@ use yii\exceptions\NotSupportedException;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Connection extends \yii\db\Connection
+class Connection extends \Yiisoft\Db\Connection
 {
     /**
      * {@inheritdoc}

@@ -7,9 +7,9 @@
 SELECT * FROM idx_item FACET brand_id FACET categories;
 ```
 
-`yii\sphinx\Query` はこの `FACET` 句の構築だけでなく、ファセット結果の取得をもサポートしています。
-ファセットは `yii\sphinx\Query::facets` によって指定することが出来ます。
-ファセットを伴う結果を取得するためには、`yii\sphinx\Query::search()` を使用する必要があります。
+`Yiisoft\Db\Sphinx\Query` はこの `FACET` 句の構築だけでなく、ファセット結果の取得をもサポートしています。
+ファセットは `Yiisoft\Db\Sphinx\Query::facets` によって指定することが出来ます。
+ファセットを伴う結果を取得するためには、`Yiisoft\Db\Sphinx\Query::search()` を使用する必要があります。
 例えば、
 
 ```php
@@ -36,8 +36,8 @@ foreach ($results['facets']['brand_id'] as $frame) {
 配列形式を使うと、`select` や `order` など、ファセットのオプションを追加して指定することが出来ます。
 
 ```php
-use yii\db\Expression;
-use yii\sphinx\Query;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $results = $query->from('idx_item')

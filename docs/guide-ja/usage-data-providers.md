@@ -1,11 +1,11 @@
 データプロバイダを扱う
 ======================
 
-[[\yii\sphinx\Query]] および [[\yii\sphinx\ActiveQuery]] とともに [[\yii\data\ActiveDataProvider]] を使うことが出来ます。
+[[\Yiisoft\Db\Sphinx\Query]] および [[\Yiisoft\Db\Sphinx\ActiveQuery]] とともに [[\yii\data\ActiveDataProvider]] を使うことが出来ます。
 
 ```php
 use yii\data\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('yii2_test_article_index')->match('development');
@@ -31,12 +31,12 @@ $provider = new ActiveDataProvider([
 $models = $provider->getModels();
 ```
 
-しかし、[ファセットの機能](usage-facets.md) または [クエリのメタ情報](usage-meta.md) を利用したい場合は、`yii\sphinx\ActiveDataProvider` を使用する必要があります。
+しかし、[ファセットの機能](usage-facets.md) または [クエリのメタ情報](usage-meta.md) を利用したい場合は、`Yiisoft\Db\Sphinx\ActiveDataProvider` を使用する必要があります。
 これを使えば、クエリのメタ情報を使ってアイテムの総数を準備したり、ファセット検索の結果を取得したりすることが出来ます。
 
 ```php
-use yii\sphinx\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\ActiveDataProvider;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('idx_item')

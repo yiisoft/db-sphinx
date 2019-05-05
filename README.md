@@ -55,7 +55,7 @@ return [
     //....
     'components' => [
         'sphinx' => [
-            'class' => yii\sphinx\Connection::class,
+            'class' => Yiisoft\Db\Sphinx\Connection::class,
             'dsn' => 'mysql:host=127.0.0.1;port=9306;',
             'username' => '',
             'password' => '',

@@ -1,11 +1,11 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
 use yii\helpers\Yii;
-use yii\db\Expression;
-use yii\sphinx\MatchExpression;
-use yii\sphinx\Query;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\MatchExpression;
+use Yiisoft\Db\Sphinx\Query;
 
 /**
  * @group sphinx

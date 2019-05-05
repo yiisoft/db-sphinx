@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\base\BaseObject;
-use yii\db\Expression;
+use Yiisoft\Db\Expression;
 
 /**
  * ColumnSchema class describes the metadata of a column in a Sphinx index.

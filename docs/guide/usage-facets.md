@@ -7,13 +7,13 @@ Since version 2.2.3 Sphinx provides ability of the facet searching via `FACET` c
 SELECT * FROM idx_item FACET brand_id FACET categories;
 ```
 
-`yii\sphinx\Query` supports composition of this clause as well as fetching facet results.
-You may specify facets via `yii\sphinx\Query::facets`. In order to fetch results with facets you need
-to use `yii\sphinx\Query::search()` method.
+`Yiisoft\Db\Sphinx\Query` supports composition of this clause as well as fetching facet results.
+You may specify facets via `Yiisoft\Db\Sphinx\Query::facets`. In order to fetch results with facets you need
+to use `Yiisoft\Db\Sphinx\Query::search()` method.
 For example:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $results = $query->from('idx_item')
@@ -38,8 +38,8 @@ foreach ($results['facets']['brand_id'] as $frame) {
 You may specify additional facet options like `select` or `order` using an array format:
 
 ```php
-use yii\db\Expression;
-use yii\sphinx\Query;
+use Yiisoft\Db\Expression;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $results = $query->from('idx_item')

@@ -1,8 +1,8 @@
 <?php
 
-namespace yiiunit\sphinx\data\ar;
+namespace Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord;
 
-use yii\sphinx\ActiveQuery;
+use Yiisoft\Db\Sphinx\ActiveQuery;
 
 class ArticleDb extends ActiveRecordDb
 {

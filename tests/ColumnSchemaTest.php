@@ -1,8 +1,8 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\sphinx\ColumnSchema;
+use Yiisoft\Db\Sphinx\ColumnSchema;
 
 /**
  * @group sphinx

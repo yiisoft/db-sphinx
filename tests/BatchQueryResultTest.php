@@ -1,12 +1,12 @@
 <?php
 
-namespace yiiunit\sphinx;
+namespace Yiisoft\Db\Sphinx\Tests;
 
-use yii\db\BatchQueryResult;
-use yii\sphinx\Query;
-use yiiunit\sphinx\data\ar\ActiveRecord;
-use yiiunit\sphinx\data\ar\ActiveRecordDb;
-use yiiunit\sphinx\data\ar\ArticleIndex;
+use Yiisoft\Db\BatchQueryResult;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord\ActiveRecord;
+use Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord\ActiveRecordDb;
+use Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord\ArticleIndex;
 
 class BatchQueryResultTest extends TestCase
 {

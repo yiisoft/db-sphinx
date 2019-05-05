@@ -45,10 +45,10 @@
         }
     ],
     "autoload": {
-        "psr-4": { "yii\\sphinx\\": "src" }
+        "psr-4": { "Yiisoft\\Db\\Sphinx\\": "src" }
     },
     "autoload-dev": {
-        "psr-4": {"yiiunit\\sphinx\\": "tests/"}
+        "psr-4": { "Yiisoft\\Db\\Sphinx\\Tests\\": "tests/" }
     },
     "extra": {
         "branch-alias": {

@@ -1,12 +1,12 @@
 Using the ActiveRecord
 ======================
 
-This extension provides ActiveRecord solution similar ot the [[\yii\db\ActiveRecord]].
-To declare an ActiveRecord class you need to extend [[\yii\sphinx\ActiveRecord]] and
+This extension provides ActiveRecord solution similar ot the [[\Yiisoft\Db\ActiveRecord]].
+To declare an ActiveRecord class you need to extend [[\Yiisoft\Db\Sphinx\ActiveRecord]] and
 implement the `indexName` method:
 
 ```php
-use yii\sphinx\ActiveRecord;
+use Yiisoft\Db\Sphinx\ActiveRecord;
 
 class Article extends ActiveRecord
 {

@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\sphinx;
+namespace Yiisoft\Db\Sphinx;
 
 use yii\base\BaseObject;
-use yii\db\Expression;
+use Yiisoft\Db\Expression;
 
 /**
  * MatchExpression represents a MATCH SphinxQL expression.
@@ -17,8 +17,8 @@ use yii\db\Expression;
  * For example:
  *
  * ```php
- * use yii\sphinx\Query;
- * use yii\sphinx\MatchExpression;
+ * use Yiisoft\Db\Sphinx\Query;
+ * use Yiisoft\Db\Sphinx\MatchExpression;
  *
  * $rows = (new Query())
  *     ->match(new MatchExpression('@title :title', ['title' => 'Yii']))
@@ -29,8 +29,8 @@ use yii\db\Expression;
  * For example:
  *
  * ```php
- * use yii\sphinx\Query;
- * use yii\sphinx\MatchExpression;
+ * use Yiisoft\Db\Sphinx\Query;
+ * use Yiisoft\Db\Sphinx\MatchExpression;
  *
  * $rows = (new Query())
  *     ->match(
@@ -47,8 +47,8 @@ use yii\db\Expression;
  * For example:
  *
  * ```php
- * use yii\sphinx\Query;
- * use yii\sphinx\MatchExpression;
+ * use Yiisoft\Db\Sphinx\Query;
+ * use Yiisoft\Db\Sphinx\MatchExpression;
  *
  * $rows = (new Query())
  *     ->match(

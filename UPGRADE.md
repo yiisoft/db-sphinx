@@ -11,6 +11,6 @@ for both A and B.
 Upgrade from Yii 2.0.5
 ----------------------
 
-* The signature of the `\yii\sphinx\QueryBuilder::buildGroupBy()` method has been changed.
+* The signature of the `\Yiisoft\Db\Sphinx\QueryBuilder::buildGroupBy()` method has been changed.
   Make sure you invoke this method correctly. In case you are extending related class and override this method,
   you should check, if it matches parent declaration.

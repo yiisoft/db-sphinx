@@ -8,14 +8,14 @@ Unfortunally, SphinxQL is unable to recognize float values passed in this way, p
 
 > syntax error, unexpected QUOTED_STRING, expecting CONST_INT or CONST_FLOAT
 
-In order to bypass this problem any parameter bind to the [[\yii\sphinx\Command]], which PHP type is exactly 'float',
+In order to bypass this problem any parameter bind to the [[\Yiisoft\Db\Sphinx\Command]], which PHP type is exactly 'float',
 will be inserted to the SphinxQL content as literal instead of being bound.
 
 This feature works only if value is a native PHP float (strings containing floats do not work).
 For example:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // following code works fine:
 $rows = (new Query())->from('item_index')
@@ -38,7 +38,7 @@ However, in case you are using 'hash' conditions over the index fields declared 
 performed automatically:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 // following code works fine in case 'price' is a float field in 'item_index':
 $rows = (new Query())->from('item_index')
@@ -50,5 +50,5 @@ $rows = (new Query())->from('item_index')
 
 > Note: it could be by the time you are reading this float param binding is already fixed at Sphinx server side, or there
   are other concerns about this functionality, which make it undesirable. In this case you can disable automatic
-  float params conversion via [[\yii\sphinx\Connection::enableFloatConversion]].
+  float params conversion via [[\Yiisoft\Db\Sphinx\Connection::enableFloatConversion]].
 

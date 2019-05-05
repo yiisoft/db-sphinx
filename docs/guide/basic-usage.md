@@ -2,7 +2,7 @@ Basic Usage
 ===========
 
 Since this extension uses MySQL protocol to access Sphinx, it shares base approach and much code from the
-regular "yii\db" package. Running SphinxQL queries a very similar to regular SQL ones:
+regular "Yiisoft\Db" package. Running SphinxQL queries a very similar to regular SQL ones:
 
 ```php
 $sql = 'SELECT * FROM idx_item WHERE group_id = :group_id';
@@ -15,7 +15,7 @@ $rows = Yii::$app->sphinx->createCommand($sql, $params)->queryAll();
 You can also use a Query Builder:
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $rows = $query->select('id, price')

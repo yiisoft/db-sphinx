@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\sphinx\data\ar;
+namespace Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord;
 
 /**
  * @property int $id

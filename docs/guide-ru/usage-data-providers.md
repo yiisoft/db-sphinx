@@ -1,11 +1,11 @@
 Работа с провайдерами данных
 ===========================
 
-Вы можете использовать [[\yii\data\ActiveDataProvider]] с [[\yii\sphinx\Query]] и [[\yii\sphinx\ActiveQuery]]:
+Вы можете использовать [[\yii\data\ActiveDataProvider]] с [[\Yiisoft\Db\Sphinx\Query]] и [[\Yiisoft\Db\Sphinx\ActiveQuery]]:
 
 ```php
 use yii\data\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('yii2_test_article_index')->match('development');
@@ -31,11 +31,11 @@ $provider = new ActiveDataProvider([
 $models = $provider->getModels();
 ```
 
-Однако, если вы хотите использовать преимущества ['facet'](usage-facets.md) или [мета-информацию запроса](usage-meta.md) вам нужно использовать `yii\sphinx\ActiveDataProvider`. Он позволяет подготовить общее количество элементов с помощью 'meta' информации запроса и получить результаты фасета:
+Однако, если вы хотите использовать преимущества ['facet'](usage-facets.md) или [мета-информацию запроса](usage-meta.md) вам нужно использовать `Yiisoft\Db\Sphinx\ActiveDataProvider`. Он позволяет подготовить общее количество элементов с помощью 'meta' информации запроса и получить результаты фасета:
 
 ```php
-use yii\sphinx\ActiveDataProvider;
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\ActiveDataProvider;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $query->from('idx_item')

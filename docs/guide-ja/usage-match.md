@@ -3,10 +3,10 @@
 
 全文検索の能力を使用するのでなければ、Sphinx を使用しても意味がありません。
 SphinxQL では、全文検索の機能は 'MATCH' 文によって提供されています。
-'MATCH' 文は、いつでも 'where' 条件の一部として手動で作成することが出来ますが、`yii\sphinx\Query` を使うのであれば `yii\sphinx\Query::match()` によって作成することが出来ます。
+'MATCH' 文は、いつでも 'where' 条件の一部として手動で作成することが出来ますが、`Yiisoft\Db\Sphinx\Query` を使うのであれば `Yiisoft\Db\Sphinx\Query::match()` によって作成することが出来ます。
 
 ```php
-use yii\sphinx\Query;
+use Yiisoft\Db\Sphinx\Query;
 
 $query = new Query();
 $rows = $query->from('idx_item')
@@ -15,12 +15,12 @@ $rows = $query->from('idx_item')
 ```
 
 Sphinx は、検索のより良いチューニングのために、'MATCH' 文の引数に、複雑な内部的構文を使用することに注意してください。
-デフォルトでは、`yii\sphinx\Query::match()` の引数の中の、内部的構文に関わる全ての特殊文字がエスケープされます。
-従って、複雑な 'MATCH' 文を使用したい場合は、引数のために `yii\db\Expression` を使わなければなりません。
+デフォルトでは、`Yiisoft\Db\Sphinx\Query::match()` の引数の中の、内部的構文に関わる全ての特殊文字がエスケープされます。
+従って、複雑な 'MATCH' 文を使用したい場合は、引数のために `Yiisoft\Db\Expression` を使わなければなりません。
 
 ```php
-use yii\sphinx\Query;
-use yii\db\Expression;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Expression;
 
 $query = new Query();
 $rows = $query->from('idx_item')
@@ -28,16 +28,16 @@ $rows = $query->from('idx_item')
     ->all();
 ```
 
-> Note: 'MATCH' の引数を作成する場合は、必ず `yii\sphinx\Connection::escapeMatchValue()` を使って全ての特殊文字を適切にエスケープしてください。
+> Note: 'MATCH' の引数を作成する場合は、必ず `Yiisoft\Db\Sphinx\Connection::escapeMatchValue()` を使って全ての特殊文字を適切にエスケープしてください。
   そうしないと、クエリが破壊されます。
 
-バージョン 2.0.6 以降は、'MATCH' 文の作成に [[\yii\sphinx\MatchExpression]] を使うことが出来ます。
-これを使うと、パラメータバインディングと同じ方法のプレースホルダを使うことが出来、引数の値が [[\yii\sphinx\Connection::escapeMatchValue()]] を使って自動的にエスケープされるようになります。
+バージョン 2.0.6 以降は、'MATCH' 文の作成に [[\Yiisoft\Db\Sphinx\MatchExpression]] を使うことが出来ます。
+これを使うと、パラメータバインディングと同じ方法のプレースホルダを使うことが出来、引数の値が [[\Yiisoft\Db\Sphinx\Connection::escapeMatchValue()]] を使って自動的にエスケープされるようになります。
 例えば、
 
 ```php
-use yii\sphinx\Query;
-use yii\sphinx\MatchExpression;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Sphinx\MatchExpression;
 
 $rows = (new Query())
     ->match(new MatchExpression('@title :title', ['title' => 'Yii'])) // ':title' の値が自動的にエスケープされる
@@ -45,12 +45,12 @@ $rows = (new Query())
 ```
 
 [[match()]]、[[andMatch()]] および [[orMatch()]] を使って、複数の条件を結合することが出来ます。
-各条件は、[[\yii\sphinx\Query:where]] で使われているのと同じ配列構文を使って指定することが出来ます。
+各条件は、[[\Yiisoft\Db\Sphinx\Query:where]] で使われているのと同じ配列構文を使って指定することが出来ます。
 例えば、
 
 ```php
-use yii\sphinx\Query;
-use yii\sphinx\MatchExpression;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Sphinx\MatchExpression;
 
 $rows = (new Query())
     ->match(
@@ -67,8 +67,8 @@ $rows = (new Query())
 例えば、
 
 ```php
-use yii\sphinx\Query;
-use yii\sphinx\MatchExpression;
+use Yiisoft\Db\Sphinx\Query;
+use Yiisoft\Db\Sphinx\MatchExpression;
 
 $rows = (new Query())
     ->match(

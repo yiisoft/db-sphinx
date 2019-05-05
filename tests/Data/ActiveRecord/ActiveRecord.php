@@ -1,11 +1,11 @@
 <?php
 
-namespace yiiunit\sphinx\data\ar;
+namespace Yiisoft\Db\Sphinx\Tests\Data\ActiveRecord;
 
 /**
  * Test Sphinx ActiveRecord class
  */
-class ActiveRecord extends \yii\sphinx\ActiveRecord
+class ActiveRecord extends \Yiisoft\Db\Sphinx\ActiveRecord
 {
     public static $db;
 
