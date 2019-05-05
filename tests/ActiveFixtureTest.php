@@ -14,7 +14,7 @@ class ActiveFixtureTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        \Yii::$app->set('sphinx', $this->getConnection());
+        $this->container->set('sphinx', $this->getConnection());
         ActiveRecord::$db = $this->getConnection();
     }
 

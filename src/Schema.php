@@ -10,6 +10,8 @@ namespace Yiisoft\Db\Sphinx;
 use yii\base\BaseObject;
 use Yiisoft\Cache\Cache;
 use Yiisoft\Cache\Dependencies\TagDependency;
+use Yiisoft\Db\Connection;
+use Yiisoft\Db\ConnectionInterface;
 use Yiisoft\Db\Exception;
 use yii\helpers\Yii;
 
@@ -26,7 +28,7 @@ use yii\helpers\Yii;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Schema extends BaseObject
+class Schema extends \Yiisoft\Db\Mysql\Schema
 {
     /**
      * The following are the supported abstract column data types.
@@ -77,6 +79,11 @@ class Schema extends BaseObject
         'float' => self::TYPE_FLOAT,
         'mva' => self::TYPE_INTEGER,
     ];
+
+    public function __construct(ConnectionInterface $db)
+    {
+        $this->db = $db;
+    }
 
     /**
      * Loads the metadata for the specified index.

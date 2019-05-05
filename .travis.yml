@@ -30,7 +30,7 @@ before_script:
 
   # initialize databases
   - travis_retry mysql -e 'CREATE DATABASE `yiitest`;';
-  - tests/data/travis/sphinx-setup.sh
+  - tests/Data/travis/sphinx-setup.sh
   - |
     if [ $TRAVIS_PHP_VERSION = '7.3' ]; then
       PHPUNIT_FLAGS="--coverage-clover=coverage.clover"

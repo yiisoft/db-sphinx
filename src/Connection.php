@@ -120,10 +120,9 @@ class Connection extends \Yiisoft\Db\Connection
      */
     public function createCommand($sql = null, $params = [])
     {
-        $command = new Command([
-            'db' => $this,
-            'sql' => $sql,
-        ]);
+        $command = new Command();
+        $command->db = $this;
+        $command->sql = $sql;
 
         return $command->bindValues($params);
     }

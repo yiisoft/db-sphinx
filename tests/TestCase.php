@@ -99,7 +99,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     public static function getParam($name, $default = null)
     {
         if (static::$params === null) {
-            static::$params = require(__DIR__ . '/data/config.php');
+            static::$params = require(__DIR__ . '/Data/config.php');
         }
 
         return isset(static::$params[$name]) ? static::$params[$name] : $default;
@@ -126,9 +126,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
     protected function getVendorPath()
     {
-        $vendor = dirname(dirname(__DIR__)) . '/vendor';
+        $vendor = dirname(__DIR__, 2) . '/vendor';
         if (!is_dir($vendor)) {
-            $vendor = dirname(dirname(dirname(dirname(__DIR__))));
+            $vendor = dirname(__DIR__, 4);
         }
         return $vendor;
     }
@@ -155,7 +155,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         if (!$reset && $this->sphinx) {
             return $this->sphinx;
         }
-        $db = new Connection;
+        $db = new Connection();
         $db->dsn = $this->sphinxConfig['dsn'];
         if (isset($this->sphinxConfig['username'])) {
             $db->username = $this->sphinxConfig['username'];
@@ -193,7 +193,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         if (!$reset && $this->db) {
             return $this->db;
         }
-        $db = new \Yiisoft\Db\Connection;
+        $db = new \Yiisoft\Db\Connection();
         $db->dsn = $this->dbConfig['dsn'];
         if (isset($this->dbConfig['username'])) {
             $db->username = $this->dbConfig['username'];

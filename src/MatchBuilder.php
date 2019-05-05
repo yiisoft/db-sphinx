@@ -68,7 +68,6 @@ class MatchBuilder extends BaseObject
     public function __construct($connection, $config = [])
     {
         $this->db = $connection;
-        parent::__construct($config);
     }
 
     /**
