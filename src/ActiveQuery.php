@@ -9,9 +9,9 @@ namespace yii\sphinx;
 
 use yii\di\Initiable;
 use yii\exceptions\InvalidCallException;
-use yii\activerecord\ActiveQueryInterface;
-use yii\activerecord\ActiveQueryTrait;
-use yii\activerecord\ActiveRelationTrait;
+use Yiisoft\ActiveRecord\ActiveQueryInterface;
+use Yiisoft\ActiveRecord\ActiveQueryTrait;
+use Yiisoft\ActiveRecord\ActiveRelationTrait;
 
 /**
  * ActiveQuery represents a Sphinx query associated with an Active Record class.

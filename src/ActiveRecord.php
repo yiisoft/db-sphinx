@@ -26,7 +26,7 @@ use Yiisoft\Strings\StringHelper;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-abstract class ActiveRecord extends \yii\activerecord\ActiveRecord
+abstract class ActiveRecord extends \Yiisoft\ActiveRecord\ActiveRecord
 {
     /**
      * The insert operation. This is mainly used when overriding [[transactions()]] to specify which operations are transactional.

@@ -62,7 +62,7 @@ use yii\exceptions\InvalidConfigException;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0.4
  */
-class ActiveDataProvider extends \yii\activerecord\data\ActiveDataProvider
+class ActiveDataProvider extends \Yiisoft\ActiveRecord\Data\ActiveDataProvider
 {
     /**
      * @var array search query meta info in format: name => value.
