@@ -12,7 +12,7 @@ use Yiisoft\Db\Sphinx\ActiveRecord;
 use Yiisoft\Db\Sphinx\Connection;
 use Yiisoft\Db\Sphinx\Schema;
 use Yiisoft\Yii\Gii\CodeFile;
-use Yiisoft\Inflector\InflectorHelper;
+use Yiisoft\Strings\Inflector;
 
 /**
  * This generator will generate one or multiple ActiveRecord classes for the specified Sphinx index.
@@ -182,7 +182,7 @@ class Generator extends \Yiisoft\Yii\Gii\Generator
             if (!strcasecmp($column->name, 'id')) {
                 $labels[$column->name] = 'ID';
             } else {
-                $label = InflectorHelper::camel2words($column->name);
+                $label = Inflector::camel2words($column->name);
                 if (substr_compare($label, ' id', -3, 3, true) === 0) {
                     $label = substr($label, 0, -3) . ' ID';
                 }
@@ -379,7 +379,7 @@ class Generator extends \Yiisoft\Yii\Gii\Generator
             }
         }
 
-        return $this->_classNames[$indexName] = InflectorHelper::id2camel($className, '_');
+        return $this->_classNames[$indexName] = Inflector::id2camel($className, '_');
     }
 
     /**

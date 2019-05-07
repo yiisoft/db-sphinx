@@ -10,7 +10,7 @@ namespace Yiisoft\Db\Sphinx;
 use yii\exceptions\InvalidConfigException;
 use yii\exceptions\NotSupportedException;
 use Yiisoft\Db\StaleObjectException;
-use Yiisoft\Inflector\InflectorHelper;
+use Yiisoft\Strings\Inflector;
 use yii\helpers\Yii;
 use Yiisoft\Strings\StringHelper;
 
@@ -146,14 +146,14 @@ abstract class ActiveRecord extends \Yiisoft\ActiveRecord\ActiveRecord
 
     /**
      * Declares the name of the Sphinx index associated with this AR class.
-     * By default this method returns the class name as the index name by calling [[InflectorHelper::camel2id()]].
+     * By default this method returns the class name as the index name by calling [[Inflector::camel2id()]].
      * For example, 'Article' becomes 'article', and 'StockItem' becomes
      * 'stock_item'. You may override this method if the index is not named after this convention.
      * @return string the index name
      */
     public static function indexName()
     {
-        return InflectorHelper::camel2id(StringHelper::basename(get_called_class()), '_');
+        return Inflector::camel2id(StringHelper::basename(get_called_class()), '_');
     }
 
     /**
