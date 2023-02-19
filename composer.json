@@ -34,8 +34,7 @@
         "yiisoft/db-mysql": "dev-master",
         "yiisoft/yii-console": "dev-master",
         "yiisoft/log": "dev-master",
-        "yiisoft/cache": "dev-master",
-        "hiqdev/composer-config-plugin": "^1.0@dev"
+        "yiisoft/cache": "dev-master"
     },
     "repositories": [
         {
@@ -52,11 +51,6 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
-        },
-        "config-plugin": {
-            "params": "config/params.php",
-            "common": "config/common.php",
-            "tests": "config/tests.php"
         }
     }
 }
