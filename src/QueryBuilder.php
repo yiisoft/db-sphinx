@@ -1,8 +1,9 @@
 <?php
+
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright © 2008 by Yii Software (https://www.yiiframework.com/)
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace Yiisoft\Db\Sphinx;
@@ -445,7 +446,7 @@ class QueryBuilder extends BaseObject
             $optionSql = '';
         }
 
-        return 'CALL SNIPPETS(' . $dataSql. ', ' . $indexParamName . ', ' . $matchSql . $optionSql. ')';
+        return 'CALL SNIPPETS(' . $dataSql . ', ' . $indexParamName . ', ' . $matchSql . $optionSql . ')';
     }
 
     /**
@@ -1026,7 +1027,7 @@ class QueryBuilder extends BaseObject
             throw new InvalidArgumentException("Operator '$operator' requires two operands.");
         }
 
-        $escape = isset($operands[2]) ? $operands[2] : ['%'=>'\%', '_'=>'\_', '\\'=>'\\\\'];
+        $escape = isset($operands[2]) ? $operands[2] : ['%' => '\%', '_' => '\_', '\\' => '\\\\'];
         unset($operands[2]);
 
         [$column, $values] = $operands;
@@ -1229,7 +1230,7 @@ class QueryBuilder extends BaseObject
             $phName = $showMeta->expression;
         } else {
             $phName = self::PARAM_PREFIX . count($params);
-            $escape = ['%'=>'\%', '_'=>'\_', '\\'=>'\\\\'];
+            $escape = ['%' => '\%', '_' => '\_', '\\' => '\\\\'];
             $params[$phName] = '%' . strtr($showMeta, $escape) . '%';
         }
 

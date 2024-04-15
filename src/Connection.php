@@ -1,8 +1,9 @@
 <?php
+
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright © 2008 by Yii Software (https://www.yiiframework.com/)
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace Yiisoft\Db\Sphinx;
@@ -11,7 +12,7 @@ use yii\exceptions\NotSupportedException;
 
 /**
  * Connection represents the Sphinx connection via MySQL protocol.
- * This class uses [PDO](http://www.php.net/manual/en/ref.pdo.php) to maintain such connection.
+ * This class uses [PDO](https://www.php.net/manual/en/ref.pdo.php) to maintain such connection.
  * Note: although PDO supports numerous database drivers, this class supports only MySQL.
  *
  * In order to setup Sphinx "searchd" to support MySQL protocol following configuration should be added:

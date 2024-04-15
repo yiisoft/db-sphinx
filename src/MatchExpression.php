@@ -1,8 +1,9 @@
 <?php
+
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright © 2008 by Yii Software (https://www.yiiframework.com/)
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace Yiisoft\Db\Sphinx;
@@ -79,7 +80,7 @@ use Yiisoft\Db\Expression;
  * using [[Connection::escapeMatchValue()]].
  *
  * @see MatchBuilder
- * @see http://sphinxsearch.com/docs/current.html#extended-syntax
+ * @see https://sphinxsearch.com/docs/current.html#extended-syntax
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0.6
