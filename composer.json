@@ -1,14 +1,20 @@
 {
     "name": "yiisoft/db-sphinx",
     "description": "Yii Framework Sphinx full text search engine extension",
-    "keywords": ["yii", "sphinx", "active-record", "search", "fulltext"],
+    "keywords": [
+        "yii",
+        "sphinx",
+        "active-record",
+        "search",
+        "fulltext"
+    ],
     "type": "library",
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/yiisoft/db-sphinx/issues",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
+        "forum": "https://www.yiiframework.com/forum/",
+        "wiki": "https://www.yiiframework.com/wiki/",
+        "irc": "ircs://irc.libera.chat:6697/yii",
         "source": "https://github.com/yiisoft/db-sphinx"
     },
     "authors": [
@@ -43,10 +49,14 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Yiisoft\\Db\\Sphinx\\": "src" }
+        "psr-4": {
+            "Yiisoft\\Db\\Sphinx\\": "src"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Yiisoft\\Db\\Sphinx\\Tests\\": "tests/" }
+        "psr-4": {
+            "Yiisoft\\Db\\Sphinx\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "branch-alias": {

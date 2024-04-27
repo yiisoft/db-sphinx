@@ -1,8 +1,9 @@
 <?php
+
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright © 2008 by Yii Software (https://www.yiiframework.com/)
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace Yiisoft\Db\Sphinx;
@@ -15,7 +16,7 @@ use Yiisoft\Db\Expression;
  * MatchBuilder builds a MATCH SphinxQL expression based on the specification given as a [[MatchExpression]] object.
  *
  * @see MatchExpression
- * @see http://sphinxsearch.com/docs/current.html#extended-syntax
+ * @see https://sphinxsearch.com/docs/current.html#extended-syntax
  *
  * @author Kirichenko Sergey <sa-kirch@yandex.ru>
  * @author Paul Klimov <klimov.paul@gmail.com>
