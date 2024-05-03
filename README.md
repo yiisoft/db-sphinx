@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="80px">
+        <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px">
     </a>
     <a href="https://sphinxsearch.com/" target="_blank" rel="external">
         <img src="https://sphinxsearch.com/images/logo.png" height="80px">
