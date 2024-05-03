@@ -2,7 +2,7 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="80px">
     </a>
-    <a href="https://sphinxsearch.com/" target="_blank">
+    <a href="https://sphinxsearch.com/" target="_blank" rel="external">
         <img src="https://sphinxsearch.com/images/logo.png" height="80px">
     </a>
     <h1 align="center">Yii Framework Sphinx full text search engine extension</h1>
