@@ -13,7 +13,7 @@
 下記のコマンドを実行してください。
 
 ```
-php composer.phar require --prefer-dist yiisoft/db-sphinx
+php composer.phar require yiisoft/db-sphinx
 ```
 
 または、あなたの `composer.json` ファイルの `require` セクションに、下記を追加してください。

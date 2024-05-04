@@ -12,7 +12,7 @@
 Для этого запустите
 
 ```
-php composer.phar require --prefer-dist yiisoft/db-sphinx
+php composer.phar require yiisoft/db-sphinx
 ```
 
 или добавьте
