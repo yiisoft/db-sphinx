@@ -7,7 +7,7 @@
 
 ## Получение с помощью Composer
 
-Предпочтительный способ установки расширения через [composer](https://getcomposer.org/download/).
+Предпочтительный способ установки расширения через [Composer](https://getcomposer.org):
 
 Для этого запустите
 
