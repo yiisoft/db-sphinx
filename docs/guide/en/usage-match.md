@@ -1,9 +1,8 @@
-Composing 'MATCH' statement
-===========================
+# Composing 'MATCH' statement
 
 Sphinx usage does not make sense unless you are using its fulltext search ability.
-In SphinxQL it is provided via 'MATCH' statement. You can always compose it manually as a part of the 'where'
-condition, but if you are using `Yiisoft\Db\Sphinx\Query` you can do it via `Yiisoft\Db\Sphinx\Query::match()`:
+In SphinxQL it is provided via 'MATCH' statement. You can always compose it manually as a part of the `where`
+condition, but if you are using `Yiisoft\Db\Sphinx\Query` you can do it with `Yiisoft\Db\Sphinx\Query::match()`:
 
 ```php
 use Yiisoft\Db\Sphinx\Query;
@@ -16,7 +15,7 @@ $rows = $query->from('idx_item')
 
 Please note that Sphinx 'MATCH' statement argument uses complex internal syntax for better tuning.
 By default `Yiisoft\Db\Sphinx\Query::match()` will escape all special characters related to this syntax from
-its argument. So if you wish to use complex 'MATCH' statement, you should use `Yiisoft\Db\Expression` for it:
+its argument. So if you wish to use complex `MATCH` statement, you should use `Yiisoft\Db\Expression` for it:
 
 ```php
 use Yiisoft\Db\Sphinx\Query;
@@ -28,13 +27,13 @@ $rows = $query->from('idx_item')
     ->all();
 ```
 
-> Note: if you compose 'MATCH' argument, make sure to use `\Yiisoft\Db\Sphinx\Connection::escapeMatchValue()` to properly
+> Note: if you compose `MATCH` argument, make sure to use`\Yiisoft\Db\Sphinx\Connection::escapeMatchValue()` to properly
   escape any special characters, which may break the query.
 
-Since version 2.0.6 you can use [[\Yiisoft\Db\Sphinx\MatchExpression]] for the 'MATCH' statement composition.
-It allows composition of the 'MATCH' expression using placeholders in similar way as bound parameters, which
-values will be automatically escaped using [[\Yiisoft\Db\Sphinx\Connection::escapeMatchValue()]].
-For examples:
+Since version 2.0.6 you can use `\Yiisoft\Db\Sphinx\MatchExpression` for the `MATCH` statement composition.
+It allows composition of the `MATCH` expression using placeholders in similar way as bound parameters, which
+values will be automatically escaped using `\Yiisoft\Db\Sphinx\Connection::escapeMatchValue()`.
+For example:
 
 ```php
 use Yiisoft\Db\Sphinx\Query;
@@ -45,8 +44,8 @@ $rows = (new Query())
     ->all();
 ```
 
-You may use [[match()]], [[andMatch()]] and [[orMatch()]] to combine several conditions.
-Each condition can be specified using array syntax similar to the one used for [[\Yiisoft\Db\Sphinx\Query:where]].
+You may use `match()`, `andMatch()` and `orMatch()` to combine several conditions.
+Each condition can be specified using array syntax similar to the one used for `\Yiisoft\Db\Sphinx\Query:where`.
 For example:
 
 ```php
@@ -64,7 +63,7 @@ $rows = (new Query())
     ->all();
 ```
 
-You may as well compose expressions with special operators like 'MAYBE', 'PROXIMITY' etc.
+You may as well compose expressions with special operators like `MAYBE`, `PROXIMITY` etc.
 For example:
 
 ```php

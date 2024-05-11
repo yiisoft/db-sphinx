@@ -1,27 +1,16 @@
 # Yii Framework Sphinx full text search engine extension
 
-This extension adds [Sphinx](https://sphinxsearch.com/docs) full text search engine extension for the Yii 2 framework.
-It supports all Sphinx features including [Real-time Indexes](https://sphinxsearch.com/docs/current.html#rt-indexes).
+## General usage
 
-Getting Started
----------------
+- [Composing 'MATCH' statement](usage-match.md)
+- [Using the ActiveRecord](usage-ar.md)
+- [Fetching query META information](usage-meta.md)
+- [Facet search](usage-facets.md)
+- [Working with data providers](usage-data-providers.md)
+- [Building Snippets (Excerpts)](usage-snippets.md)
 
-* [Installation](installation.md)
-* [Basic Usage](basic-usage.md)
+## Additional topics
 
-Usage
------
-
-* [Composing 'MATCH' statement](usage-match.md)
-* [Using the ActiveRecord](usage-ar.md)
-* [Fetching query META information](usage-meta.md)
-* [Facet search](usage-facets.md)
-* [Working with data providers](usage-data-providers.md)
-* [Building Snippets (Excerpts)](usage-snippets.md)
-
-Additional topics
------------------
-
-* [Using Gii generator](topics-gii.md)
-* [Float params binding](topics-float-param-binding.md)
-* [Working with distributed indexes](distributed-indexes.md)
+- [Using Gii generator](topics-gii.md)
+- [Float params binding](topics-float-param-binding.md)
+- [Working with distributed indexes](distributed-indexes.md)

@@ -1,17 +1,16 @@
-Float params binding
-====================
+# Float params binding
 
-There are issue related to float values binding using PDO and SphinxQL.
+There are issue related to float values binding using [PDO](https://www.php.net/manual/en/book.pdo.php) and SphinxQL.
 PDO does not provide a way to bind a float parameter in prepared statement mode, thus float values are passed
 with mode `PDO::PARAM_STR` and thus are bound to the statement as quoted strings, e.g. `'9.85'`.
 Unfortunally, SphinxQL is unable to recognize float values passed in this way, producing following error:
 
 > syntax error, unexpected QUOTED_STRING, expecting CONST_INT or CONST_FLOAT
 
-In order to bypass this problem any parameter bind to the [[\Yiisoft\Db\Sphinx\Command]], which PHP type is exactly 'float',
+In order to bypass this problem any parameter bind to the  `\Yiisoft\Db\Sphinx\Command`, which PHP type is exactly `float`,
 will be inserted to the SphinxQL content as literal instead of being bound.
 
-This feature works only if value is a native PHP float (strings containing floats do not work).
+This feature works only if value is a native [PHP float](https://www.php.net/manual/en/language.types.float.php) (strings containing floats do not work).
 For example:
 
 ```php
@@ -34,7 +33,7 @@ $rows = (new Query())->from('item_index')
     ->all();
 ```
 
-However, in case you are using 'hash' conditions over the index fields declared as 'float', the type conversion will be
+However, in case you are using `hash` conditions over the index fields declared as `float`, the type conversion will be
 performed automatically:
 
 ```php
@@ -50,5 +49,4 @@ $rows = (new Query())->from('item_index')
 
 > Note: it could be by the time you are reading this float param binding is already fixed at Sphinx server side, or there
   are other concerns about this functionality, which make it undesirable. In this case you can disable automatic
-  float params conversion via [[\Yiisoft\Db\Sphinx\Connection::enableFloatConversion]].
-
+  float params conversion via `\Yiisoft\Db\Sphinx\Connection::enableFloatConversion`.

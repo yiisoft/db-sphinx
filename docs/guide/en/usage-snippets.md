@@ -1,5 +1,4 @@
-Building Snippets (Excerpts)
-============================
+# Building Snippets (Excerpts)
 
 Snippet (excerpt) - is a fragment of the index source text, which contains highlighted words from fulltext search
 condition. Sphinx has a powerful build-in mechanism to compose snippets. However, since Sphinx does not store the
@@ -18,7 +17,7 @@ foreach ($rows as $row) {
 $snippets = Yii::$app->sphinx->createCommand($sql)->callSnippets('idx_item', $rowSnippetSources, 'about');
 ```
 
-You can simplify this workflow using [[Yiisoft\Db\Sphinx\Query::snippetCallback]].
+You can simplify this workflow using `Yiisoft\Db\Sphinx\Query::snippetCallback`.
 It is a PHP callback, which receives array of query result rows as an argument and must return the
 array of snippet source strings in the order, which match one of incoming rows.
 Example:
@@ -43,7 +42,7 @@ foreach ($rows as $row) {
 }
 ```
 
-If you are using Active Record, you can [[Yiisoft\Db\Sphinx\ActiveQuery::snippetByModel()]] to compose a snippets.
+If you are using Active Record, you can `Yiisoft\Db\Sphinx\ActiveQuery::snippetByModel()` to compose a snippets.
 This method retrieves snippet source per each row calling `getSnippetSource()` method of the result model.
 All you need to do is implement it in your Active Record class, so it return the correct value:
 

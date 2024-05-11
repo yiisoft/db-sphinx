@@ -1,5 +1,4 @@
-Fetching query META information
-===============================
+# Fetching query META information
 
 Sphinx allows fetching statistical information about last performed query via [SHOW META](https://sphinxsearch.com/docs/current.html#sphinxql-show-meta) SphinxQL statement.
 This information is commonly used to get total count of rows in the index without extra `SELECT COUNT(*) ...` query.
@@ -19,6 +18,6 @@ $meta = $results['meta'];
 $totalItemCount = $results['meta']['total'];
 ```
 
-> Note: Total item count that can be extracted from 'meta' is limited to `max_matches` sphinx option.
+> Note: Total item count that can be extracted from `meta` is limited to `max_matches` sphinx option.
   If your index contains more records than `max_matches` value (usually - 1000), you should either raise up
-  `max_matches` via [[Query::options]] or use [[Query::count()]] to retrieve records count.
+  `max_matches` with `Query::options` or use `Query::count()` to retrieve records count.

@@ -1,8 +1,7 @@
-Using Gii generator
-===================
+# Using Gii Generator
 
-This extension provides a code generator, which can be integrated with yii 'gii' module. It allows generation of the
-Active Record code. In order to enable it, you should adjust your application configuration in following way:
+This extension provides a code generator, which can be integrated with [Gii Generator Extension](<https://github.com/yiisoft/yii-gii>). It allows generation of the
+[ActiveRecord](https://github.com/yiisoft/active-record) code. In order to enable it, you should adjust your application configuration in following way:
 
 ```php
 return [

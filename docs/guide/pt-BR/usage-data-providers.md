@@ -1,7 +1,6 @@
-Working with data providers
-===========================
+# Working with data providers
 
-You can use [[\yii\data\ActiveDataProvider]] with the [[\Yiisoft\Db\Sphinx\Query]] and [[\Yiisoft\Db\Sphinx\ActiveQuery]]:
+You can use `\yii\data\ActiveDataProvider` with the `\Yiisoft\Db\Sphinx\Query` and `\Yiisoft\Db\Sphinx\ActiveQuery`:
 
 ```php
 use yii\data\ActiveDataProvider;
@@ -32,7 +31,7 @@ $models = $provider->getModels();
 ```
 
 However, if you want to use ['facet' feature](usage-facets.md) or [query meta information](usage-meta.md) benefit
-you need to use `Yiisoft\Db\Sphinx\ActiveDataProvider`. It allows preparing total item count using query 'meta' information
+you need to use `Yiisoft\Db\Sphinx\ActiveDataProvider`. It allows preparing total item count using query `meta` information
 and fetching of the facet results:
 
 ```php
@@ -58,6 +57,6 @@ $facets = $provider->getFacets();
 $brandIdFacet = $provider->getFacet('brand_id');
 ```
 
-> Note: Because pagination offset and limit may exceed Sphinx 'max_matches' bounds, data provider will set 'max_matches'
-  option automatically based on those values. However, if [[Query::showMeta]] is set, such adjustment is not performed
-  as it will break total count calculation, so you'll have to deal with 'max_matches' bounds on your own.
+> Note: Because pagination offset and limit may exceed Sphinx `max_matches` bounds, data provider will set `max_matches`
+  option automatically based on those values. However, if `Query::showMeta` is set, such adjustment is not performed
+  as it will break total count calculation, so you'll have to deal with `max_matches` bounds on your own.

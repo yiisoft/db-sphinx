@@ -1,14 +1,13 @@
-Facet search
-============
+# Facet search
 
 Since version 2.2.3 Sphinx provides ability of the facet searching via `FACET` clause:
 
-```
+```sql
 SELECT * FROM idx_item FACET brand_id FACET categories;
 ```
 
 `Yiisoft\Db\Sphinx\Query` supports composition of this clause as well as fetching facet results.
-You may specify facets via `Yiisoft\Db\Sphinx\Query::facets`. In order to fetch results with facets you need
+You may specify facets with `Yiisoft\Db\Sphinx\Query::facets`. In order to fetch results with facets you need
 to use `Yiisoft\Db\Sphinx\Query::search()` method.
 For example:
 
@@ -56,5 +55,5 @@ $results = $query->from('idx_item')
 ```
 
 > Note: if you specify a custom select for a facet, ensure the facet name has the corresponding column inside the select statement.
-  For example, if you have specified a facet named 'my_facet', its select statement should contain 'my_facet' attribute or
-  an expression aliased as 'my_facet' ('expr() AS my_facet').
+  For example, if you have specified a facet named `my_facet`, its select statement should contain `my_facet` attribute or
+  an expression aliased as `my_facet` (`expr() AS my_facet`).

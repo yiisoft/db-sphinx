@@ -1,5 +1,4 @@
-Working with distributed indexes
-================================
+# Working with distributed indexes
 
 This extension uses `DESCRIBE` query in order to fetch information about Sphinx index structure (field names and types).
 However for the [distributed indexes](https://sphinxsearch.com/docs/current.html#distributed) it is not always possible.
