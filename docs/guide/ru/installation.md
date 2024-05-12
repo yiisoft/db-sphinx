@@ -7,16 +7,12 @@
 
 ## Получение с помощью Composer
 
-Предпочтительный способ установки расширения через [composer](https://getcomposer.org/download/).
+Предпочтительный способ установки расширения через [composer](https://getcomposer.org/).
 
 Для этого запустите
 
 ```
-<<<<<<< Updated upstream
-php composer.phar require --prefer-dist yiisoft/db-sphinx
-=======
 composer require yiisoft/db-sphinx
->>>>>>> Stashed changes
 ```
 
 или добавьте

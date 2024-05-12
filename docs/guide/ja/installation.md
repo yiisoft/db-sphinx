@@ -8,16 +8,12 @@
 
 ## Composer パッケージを取得する
 
-このエクステンションをインストールするのに推奨される方法は [composer](https://getcomposer.org/download/) によるものです。
+このエクステンションをインストールするのに推奨される方法は [composer](https://getcomposer.org/) によるものです。
 
 下記のコマンドを実行してください。
 
 ```
-<<<<<<< Updated upstream
-php composer.phar require --prefer-dist yiisoft/db-sphinx
-=======
 composer require yiisoft/db-sphinx
->>>>>>> Stashed changes
 ```
 
 または、あなたの `composer.json` ファイルの `require` セクションに、下記を追加してください。

@@ -10,7 +10,7 @@ higher is required.
 The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
 ```shell
-composer require --prefer-dist yiisoft/db-sphinx
+composer require yiisoft/db-sphinx
 ```
 
 ## Configuration
