@@ -1,3 +1,6 @@
+> [!WARNING]
+> There is no official Sphinx support planned for Yii3 DB. Use either [MySQL driver](https://github.com/yiisoft/db-mysql) directly or any of the clients availabe.
+
 <p align="center">
     <a href="https://sphinxsearch.com" target="_blank" rel="external">
         <img src="https://sphinxsearch.com/images/logo.png" height="55px">
